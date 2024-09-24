@@ -5,8 +5,6 @@ import { ThemeContext } from "../../context/ThemeContext";
 export default function Footer() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 
-      console.log('booba', theme)
-
 	return (
 		<div className={`dfr footer-container ${theme}-a2-fill ${theme}-a1-color`}>
 			<section>Samuel Bae</section>

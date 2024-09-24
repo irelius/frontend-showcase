@@ -1,18 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import "./App.css";
+import { Main, Test } from "./views";
+import ErrorPage from "./error-page";
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Main />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/test",
+		element: <Test />,
+	},
+]);
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	return (
-		<>
-			<div>
-                        initial test
-                  </div>
-		</>
-	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;

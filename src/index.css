@@ -1,5 +1,226 @@
 :root {
-  font-size: 16px;
+  --12: 12px;
+  --14: 14px;
+  --16: 16px;
+  --20: 20px;
+  --24: 24px;
+  --36: 36px;
+  --white: #ffffff;
+  --black: #000000;
+  --spring-a1: rgb(241, 211, 206);
+  --summer-a1: rgb(130, 166, 236);
+  --fall-a1: rgb(108, 78, 49);
+  --winter-a1: rgb(19, 75, 112);
+  --spring-a2: rgb(116, 83, 0);
+  --summer-a2: rgb(254, 249, 217);
+  --fall-a2: rgb(255, 219, 181);
+  --winter-a2: rgb(238, 238, 238);
+  --color-transition: all 0.75s ease-in-out;
+  --regular: 400;
+  --semi-bold: 550;
+  --bold: 700;
+}
+
+body {
+  font-family: Montserrat;
+}
+
+.spring-theme {
+  border-color: rgb(238, 202, 213);
+  background-color: rgb(67, 167, 64);
+  color: rgb(57, 62, 40);
+  transition: var(--color-transition);
+}
+
+.summer-theme {
+  color: rgb(253, 255, 109);
+  border-color: rgb(56, 170, 52);
+  background-color: rgb(75, 192, 255);
+  transition: var(--color-transition);
+}
+
+.fall-theme {
+  border-color: rgb(96, 63, 38);
+  background-color: rgb(255, 53, 31);
+  color: rgb(255, 188, 71);
+  transition: var(--color-transition);
+}
+
+.winter-theme {
+  border-color: rgb(80, 140, 155);
+  background-color: rgb(32, 30, 67);
+  color: rgb(3, 247, 235);
+  transition: var(--color-transition);
+}
+
+.spring-a1-fill {
+  background-color: var(--spring-a1);
+  transition: var(--color-transition);
+}
+
+.spring-a1-bc {
+  border-color: black;
+  transition: var(--color-transition);
+}
+
+.spring-a1-color {
+  color: var(--spring-a1);
+  transition: var(--color-transition);
+}
+
+.summer-a1-fill {
+  background-color: var(--summer-a1);
+  transition: var(--color-transition);
+}
+
+.summer-a1-bc {
+  border-color: black;
+  transition: var(--color-transition);
+}
+
+.summer-a1-color {
+  color: var(--summer-a1);
+  transition: var(--color-transition);
+}
+
+.fall-a1-fill {
+  background-color: var(--fall-a1);
+  transition: var(--color-transition);
+}
+
+.fall-a1-bc {
+  border-color: black;
+  transition: var(--color-transition);
+}
+
+.fall-a1-color {
+  color: var(--fall-a1);
+  transition: var(--color-transition);
+}
+
+.winter-a1-fill {
+  background-color: var(--winter-a1);
+  transition: var(--color-transition);
+}
+
+.winter-a1-bc {
+  border-color: black;
+  transition: var(--color-transition);
+}
+
+.winter-a1-color {
+  color: var(--winter-a1);
+  transition: var(--color-transition);
+}
+
+.spring-a2-fill {
+  background-color: var(--spring-a2);
+  transition: var(--color-transition);
+}
+
+.spring-a2-bc {
+  border-color: var(--spring-a2);
+  transition: var(--color-transition);
+}
+
+.spring-a2-color {
+  color: var(--spring-a2);
+  transition: var(--color-transition);
+}
+
+.summer-a2-fill {
+  background-color: var(--summer-a2);
+  transition: var(--color-transition);
+}
+
+.summer-a2-bc {
+  border-color: var(--summer-a2);
+  transition: var(--color-transition);
+}
+
+.summer-a2-color {
+  color: var(--summer-a2);
+  transition: var(--color-transition);
+}
+
+.fall-a2-fill {
+  background-color: var(--fall-a2);
+  transition: var(--color-transition);
+}
+
+.fall-a2-bc {
+  border-color: var(--fall-a2);
+  transition: var(--color-transition);
+}
+
+.fall-a2-color {
+  color: var(--fall-a2);
+  transition: var(--color-transition);
+}
+
+.winter-a2-fill {
+  background-color: var(--winter-a2);
+  transition: var(--color-transition);
+}
+
+.winter-a2-bc {
+  border-color: var(--winter-a2);
+  transition: var(--color-transition);
+}
+
+.winter-a2-color {
+  color: var(--winter-a2);
+  transition: var(--color-transition);
+}
+
+.border {
+  border: 1px solid;
+}
+
+.dfr {
+  display: flex;
+  flex-direction: row;
+}
+
+.dfc {
+  display: flex;
+  flex-direction: column;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcs {
+  justify-content: start;
+}
+
+.jce {
+  justify-content: end;
+}
+
+.aisb {
+  align-items: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.ais {
+  align-items: start;
+}
+
+.aie {
+  align-items: end;
+}
+
+.test-background {
+  background-color: orange;
 }
 
 /*# sourceMappingURL=index.css.map */

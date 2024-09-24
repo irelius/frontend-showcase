@@ -1,58 +1,30 @@
 .df {
-      display: flex;
+	display: flex;
 }
 
 .c {
-      flex-direction: column;
+	flex-direction: column;
 }
 
 .r {
-      flex-direction: row;
+	flex-direction: row;
 }
 
 .gap {
-      gap: 15px;
+	gap: 15px;
 }
 
 .color-display {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-      height: 50px;
-      width: 100px;
-      border: 2px solid black;
+	height: 50px;
+	width: 100px;
+	border: 2px solid black;
 }
 
 
-.spring-theme {
-      border-color: #6B717E;
-      background-color: #EFAAC4; 
-      color: #FFE8E1;
-
-      transition: all 0.75s ease-in-out;
+.test {
+	background-color: var(--d);
 }
-
-.winter-theme {
-      border-color: #03045E;
-      background-color: #0077B6; 
-      color: #90E0EF;
-
-      transition: all 0.75s ease-in-out;}
-
-
-.summer-theme {
-      border-color: #582707;
-      background-color: #FF4B3E; 
-      color: #FFE548;
-
-      transition: all 0.75s ease-in-out;}
-
-.fall-theme {
-      border-color: #283618;
-      background-color: #606C38; 
-      color: #FEFAE0;
-
-      transition: all 0.75s ease-in-out;}
-
-

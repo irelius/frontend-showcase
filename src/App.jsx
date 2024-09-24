@@ -1,7 +1,9 @@
+import { createContext, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
-import { Main, Test } from "./views";
+import { ThemeProvider } from "./context/ThemeContext";
+import { Footer, Main, Test } from "./views";
 import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
@@ -17,7 +19,16 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	return <RouterProvider router={router} />;
+	return (
+		<>
+			<ThemeProvider>
+				<section className="footer-container">
+					<Footer />
+				</section>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		</>
+	);
 }
 
 export default App;

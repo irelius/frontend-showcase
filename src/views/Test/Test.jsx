@@ -1,9 +1,14 @@
-import "./Test.css"
+import "./Test.css";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 function Test() {
-	const [theme, setTheme] = useState('autumn-theme');
+	const { theme, changeTheme } = useContext(ThemeContext);
+
+	const test = {
+		"--d": "black",
+	};
 
 	return (
 		<div className="df c gap">
@@ -11,13 +16,20 @@ function Test() {
 				<section className={`${theme} color-display`}>Color One</section>
 				<section className={`${theme} color-display`}>Color Two</section>
 				<section className={`${theme} color-display`}>Color Three</section>
-                        <section className={`${theme} color-display`}>Color Four</section>
+				<section className={`${theme} color-display`}>Color Four</section>
 			</div>
 			<div className="df c gap">
-                        <button onClick={() => setTheme('winter-theme')}>Winter</button>
-                        <button onClick={() => setTheme('fall-theme')}>Fall</button>
-                        <button onClick={() => setTheme('summer-theme')}>Summer</button>
-				<button onClick={() => setTheme('spring-theme')}>Spring</button>
+				<button onClick={() => changeTheme("winter-theme")}>Winter</button>
+				<button onClick={() => changeTheme("fall-theme")}>Fall</button>
+				<button onClick={() => changeTheme("summer-theme")}>Summer</button>
+				<button onClick={() => changeTheme("spring-theme")}>Spring</button>
+			</div>
+			<div className="test" style={test}>
+				test
+			</div>
+
+			<div style={{ height: "150px" }} className="test-background dfr jcc aic">
+				asdf
 			</div>
 		</div>
 	);

@@ -1,0 +1,13 @@
+.main-page-container {
+      width: 100%;
+      gap: 10px;
+}
+
+.main-page-columns {
+      width: 33.333333%;
+      height: 100vh;
+      display: none;
+
+      font-size: var(--36);
+      font-weight: var(--bold);
+} 

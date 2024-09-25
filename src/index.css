@@ -173,10 +173,6 @@ body {
   transition: var(--color-transition);
 }
 
-.border {
-  border: 1px solid;
-}
-
 .dfr {
   display: flex;
   flex-direction: row;
@@ -217,6 +213,26 @@ body {
 
 .aie {
   align-items: end;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.error-page-container {
+  height: 100vh;
+  width: 100vw;
+  gap: 15px;
+}
+
+.error-page-button {
+  padding: 10px;
+  border-radius: 30px;
+  width: 10rem;
 }
 
 .test-background {

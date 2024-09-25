@@ -30,7 +30,7 @@ body {
 	font-family: Montserrat;
 }
 
-// Colors
+// ------------------------------------ Colors ------------------------------------
 .spring-theme {
 	border-color: rgb(238, 202, 213);
 	background-color: rgb(67, 167, 64);
@@ -102,11 +102,9 @@ $accent-2: (
 		transition: var(--color-transition);
 	}
 }
+// -------------------------------------------------------------------------------
 
-.border {
-	border: 1px solid;
-}
-
+// ------------------------------------ Flex ------------------------------------
 .dfr {
 	display: flex;
 	flex-direction: row;
@@ -135,7 +133,35 @@ $spaceing: (
 		align-items: #{$value};
 	}
 }
+// -------------------------------------------------------------------------------
 
+.border {
+	border: 1px solid;
+}
+
+// -------------------------------- Hover ----------------------------------------
+.pointer:hover {
+	cursor: pointer;
+}
+
+// -------------------------------------------------------------------------------
+
+// ----------------------------- Error Page --------------------------------------
+.error-page-container {
+	height: 100vh;
+	width: 100vw;
+
+	gap: 15px;
+}
+
+.error-page-button {
+	padding: 10px;
+	border-radius: 30px;
+	width: 10rem;
+}
+// -------------------------------------------------------------------------------
+
+// test stuff
 .test-background {
 	background-color: orange;
 }

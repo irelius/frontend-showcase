@@ -25,6 +25,11 @@ body {
   font-family: Montserrat;
 }
 
+button {
+  padding: 10px;
+  border: 1px solid;
+}
+
 .spring-theme {
   border-color: rgb(238, 202, 213);
   background-color: rgb(67, 167, 64);
@@ -215,6 +220,72 @@ body {
   align-items: end;
 }
 
+.modal, .modal-false, .modal-true {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease;
+}
+.modal-true {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  z-index: 9000;
+}
+.modal-false {
+  background-color: transparent;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.modal-box, .modal-box-false, .modal-box-true {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 15px;
+  height: 15em;
+  width: 15em;
+  background-color: var(--white);
+  transition: all 1s ease;
+}
+.modal-box-true {
+  top: 25%;
+  opacity: 1;
+}
+.modal-box-false {
+  top: 45%;
+  opacity: 0;
+}
+
+.modal-exit-button {
+  position: absolute;
+  left: 2em;
+  top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+}
+
+.display-true {
+  display: flex;
+  transition: all 3s ease-in-out;
+}
+
+.display-false {
+  display: none;
+  transition: all 3s ease-in-out;
+}
+
 .border {
   border: 1px solid;
 }
@@ -235,8 +306,13 @@ body {
   width: 10rem;
 }
 
-.test-background {
+.orange {
   background-color: orange;
+}
+
+.full {
+  height: 100vh;
+  width: 100vw;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -30,6 +30,11 @@ body {
 	font-family: Montserrat;
 }
 
+button {
+	padding: 10px;
+	border: 1px solid;
+}
+
 // ------------------------------------ Colors ------------------------------------
 .spring-theme {
 	border-color: rgb(238, 202, 213);
@@ -135,6 +140,90 @@ $spaceing: (
 }
 // -------------------------------------------------------------------------------
 
+// -------------------------------- Modal ----------------------------------------
+.modal {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	transition: all 1s ease;
+
+	&-true {
+		@extend .modal;
+		background-color: rgba(0, 0, 0, 0.6);
+		opacity: 1;
+
+            z-index: 9000;
+	}
+
+	&-false {
+		@extend .modal;
+		background-color: transparent;
+		opacity: 0;
+
+            z-index: -1000;
+	}
+}
+
+.modal-box {
+      display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+
+	border-radius: 15px;
+	height: 15em;
+	width: 15em;
+	background-color: var(--white);
+      transition: all 1s ease;
+
+
+      &-true {
+            @extend .modal-box;
+            top: 25%;
+            opacity: 1;
+      }
+
+      &-false {
+            @extend .modal-box;
+            top: 45%;
+            opacity: 0;
+      }
+}
+
+
+.modal-exit-button {
+	position: absolute;
+	left: 2em;
+	top: 2em;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+}
+
+.display-true {
+	display: flex;
+	transition: all 3s ease-in-out;
+}
+
+.display-false {
+	display: none;
+	transition: all 3s ease-in-out;
+}
+
+// -------------------------------------------------------------------------------
+
 .border {
 	border: 1px solid;
 }
@@ -162,6 +251,11 @@ $spaceing: (
 // -------------------------------------------------------------------------------
 
 // test stuff
-.test-background {
+.orange {
 	background-color: orange;
+}
+
+.full {
+      height: 100vh;
+      width: 100vw;
 }

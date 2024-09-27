@@ -11,3 +11,7 @@
       font-size: var(--36);
       font-weight: var(--bold);
 } 
+
+.main-page-columns:hover {
+      cursor: pointer;
+}

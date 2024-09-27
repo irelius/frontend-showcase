@@ -5,6 +5,7 @@ import "./App.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Footer, Main, Modal, Test } from "./views";
 import ErrorPage from "./error-page";
+import InteractiveComponents from "./views/InteractiveComponents/InteractiveComponents";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 		path: "/modal",
 		element: <Modal />,
 	},
+      {
+            path: '/interactive-components',
+            element: <InteractiveComponents />
+      },
 	{
 		path: "/test",
 		element: <Test />,

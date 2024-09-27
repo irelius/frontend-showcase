@@ -1,5 +1,11 @@
-import './InteractiveComponents.css'
+import "./InteractiveComponents.css";
 
 export default function InteractiveComponents() {
-      return <div>InteractiveComponents Placeholder</div>;
+	return (
+		<div>
+			<section>
+                        InteractiveComponents header
+                  </section>
+		</div>
+	);
 }

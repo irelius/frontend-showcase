@@ -33,6 +33,7 @@ body {
 button {
 	padding: 10px;
 	border: 1px solid;
+	border-radius: 20px;
 }
 
 // ------------------------------------ Colors ------------------------------------
@@ -160,7 +161,7 @@ $spaceing: (
 		background-color: rgba(0, 0, 0, 0.6);
 		opacity: 1;
 
-            z-index: 9000;
+		z-index: 10000;
 	}
 
 	&-false {
@@ -168,12 +169,38 @@ $spaceing: (
 		background-color: transparent;
 		opacity: 0;
 
-            z-index: -1000;
+		z-index: -1000;
+	}
+}
+
+.modal-background {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+      transition: all 1s ease;
+
+	&-true {
+		@extend .modal-background;
+		background-color: rgba(0, 0, 0, 0.6);
+		opacity: 1;
+
+            z-index: 2000;
+	}
+
+	&-false {
+		@extend .modal-background;
+		background-color: transparent;
+		opacity: 0;
+
+		z-index: -1000;
 	}
 }
 
 .modal-box {
-      display: flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 
@@ -183,24 +210,22 @@ $spaceing: (
 	height: 15em;
 	width: 15em;
 	background-color: var(--white);
-      transition: all 1s ease;
+	transition: all 1s ease;
 
+	&-true {
+		@extend .modal-box;
+		top: 25%;
+		opacity: 1;
+	}
 
-      &-true {
-            @extend .modal-box;
-            top: 25%;
-            opacity: 1;
-      }
-
-      &-false {
-            @extend .modal-box;
-            top: 45%;
-            opacity: 0;
-      }
+	&-false {
+		@extend .modal-box;
+		top: 45%;
+		opacity: 0;
+	}
 }
 
-
-.modal-exit-button {
+.exit-button {
 	position: absolute;
 	left: 2em;
 	top: 2em;
@@ -256,6 +281,6 @@ $spaceing: (
 }
 
 .full {
-      height: 100vh;
-      width: 100vw;
+	height: 100vh;
+	width: 100vw;
 }

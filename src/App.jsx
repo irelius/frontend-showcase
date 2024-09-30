@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
 
 import "./App.css";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -17,13 +17,9 @@ const router = createBrowserRouter([
 		path: "/modal",
 		element: <Modal />,
 	},
-      {
-            path: '/interactive-components',
-            element: <InteractiveComponents />
-      },
 	{
-		path: "/test",
-		element: <Test />,
+		path: "/interactive-components",
+		element: <InteractiveComponents />,
 	},
 ]);
 

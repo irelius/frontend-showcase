@@ -1,16 +1,11 @@
 import "./Main.css";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Main() {
 	const { theme } = useContext(ThemeContext);
 	const navigate = useNavigate();
-
-	const test = () => {
-		console.log("booba");
-		return navigate("/interactive-components");
-	};
 
 	return (
 		<div className="dfr main-page-container">

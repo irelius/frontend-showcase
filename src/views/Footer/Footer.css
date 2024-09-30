@@ -18,6 +18,8 @@
 	font-family: Montserrat;
 	font-size: var(--20);
 	font-weight: var(--semi-bold);
+
+      z-index: 100000;
 }
 
 .theme-container {

@@ -28,6 +28,7 @@ body {
 button {
   padding: 10px;
   border: 1px solid;
+  border-radius: 20px;
 }
 
 .spring-theme {
@@ -237,9 +238,28 @@ button {
 .modal-true {
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
-  z-index: 9000;
+  z-index: 10000;
 }
 .modal-false {
+  background-color: transparent;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.modal-background, .modal-background-false, .modal-background-true {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 1s ease;
+}
+.modal-background-true {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  z-index: 2000;
+}
+.modal-background-false {
   background-color: transparent;
   opacity: 0;
   z-index: -1000;
@@ -265,7 +285,7 @@ button {
   opacity: 0;
 }
 
-.modal-exit-button {
+.exit-button {
   position: absolute;
   left: 2em;
   top: 2em;

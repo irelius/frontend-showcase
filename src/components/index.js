@@ -1,6 +1,7 @@
-import ModalExitButton from "./ModalExitButton";
-
+import ExitButton from "./ExitButton";
+import SideBar from "./SideBar";
 
 export {
-      ModalExitButton
+      ExitButton,
+      SideBar,
 }

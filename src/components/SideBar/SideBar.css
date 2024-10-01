@@ -1,0 +1,49 @@
+.side-bar,
+.side-bar-true,
+.side-bar-false {
+	position: absolute;
+	height: 100vh;
+	width: 20em;
+
+	gap: 5em;
+
+      z-index: 7500;
+	background-color: var(--white);
+      
+	transition: left 1s ease;
+}
+
+.side-bar-true {
+      left: 0;
+}
+
+.side-bar-false {
+      left: -20em;
+}
+
+.side-bar-options {
+	display: flex;
+	gap: 2em;
+}
+
+/* .triple-bars {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	left: 2em;
+	top: 2.5em;
+
+	z-index: -1000;
+} */
+
+.side-bar-exit-button {
+      position: relative;
+      top: 2em;
+      left: 16em;
+}
+
+.home-button {
+      width: fit-content;
+}

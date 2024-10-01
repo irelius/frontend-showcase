@@ -1,5 +1,33 @@
-import './InteractiveComponents.css'
+import { useState } from "react";
+import SideBar from "../../components/SideBar/SideBar";
+import "./InteractiveComponents.css";
 
 export default function InteractiveComponents() {
-      return <div>InteractiveComponents Placeholder</div>;
+	const [currDemo, setCurrDemo] = useState();
+	const [showSideBar, setShowSideBar] = useState(false);
+	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
+
+	return (
+		<div className="dfr">
+			<section>
+				<SideBar
+					options={options}
+					showSideBar={showSideBar}
+					setShowSideBar={setShowSideBar}
+				/>
+			</section>
+
+			<section className="dfc">
+				<section>InteractiveComponents header</section>
+				<button
+					onClick={() => {
+						setShowSideBar(true);
+                                    console.log('asdf', showSideBar)
+					}}
+				>
+					show side
+				</button>
+			</section>
+		</div>
+	);
 }

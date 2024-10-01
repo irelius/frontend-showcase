@@ -1,6 +1,6 @@
 import "./Modal.css";
 import { useState } from "react";
-import { ModalExitButton } from "../../components";
+import { ExitButton } from "../../components";
 
 export default function Modal() {
 	const [showModal, setShowModal] = useState(false);
@@ -14,7 +14,9 @@ export default function Modal() {
 		<div className="dfc aic jcc full">
 			<div className={`modal-${showModal}`} onClick={(e) => closeModal(e)}>
 				<section className={`modal-box-${showModal}`} onClick={(e) => e.stopPropagation()}>
-					<ModalExitButton setShowModal={setShowModal} />
+					<section className="modal-exit-button">
+						<ExitButton setShowModal={setShowModal} />
+					</section>
 					<section>this is modal content stuff</section>
 				</section>
 			</div>

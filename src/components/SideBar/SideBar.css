@@ -26,6 +26,13 @@
 	gap: 2em;
 }
 
+.side-bar-options>* {
+      /* border-bottom: 1px solid black; */
+      filter: drop-shadow(0px 5px 7px black);
+      padding-bottom: 1em;
+      width: 15em;
+}
+
 /* .triple-bars {
 	position: absolute;
 	display: flex;

@@ -17,7 +17,7 @@ export default function SideBar({ options, setCurrDemo, showSideBar, setShowSide
 				<section className="side-bar-exit-button">
 					<ExitButton setShowModal={setShowSideBar} />
 				</section>
-				<section className="dfc side-bar-options margin-left" style={optionsStyling}>
+				<section className="dfc side-bar-options margin-left-2" style={optionsStyling}>
 					{options.map((el, i) => {
 						return <section key={i}>{el}</section>;
 					})}

@@ -19,7 +19,14 @@ export default function InteractiveComponents() {
 
 			<section className="dfc">
 				<section>InteractiveComponents header</section>
-				<button onClick={() => setShowSideBar((prev) => !prev)}>show side</button>
+				<button
+					onClick={() => {
+						setShowSideBar(true);
+                                    console.log('asdf', showSideBar)
+					}}
+				>
+					show side
+				</button>
 			</section>
 		</div>
 	);

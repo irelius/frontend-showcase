@@ -21,6 +21,10 @@ const router = createBrowserRouter([
 		path: "/interactive-components",
 		element: <InteractiveComponents />,
 	},
+      {
+		path: "/test",
+		element: <Test />,
+	},
 ]);
 
 function App() {

@@ -121,24 +121,54 @@ $accent-2: (
 	flex-direction: column;
 }
 
-$spaceing: (
+$alignment: (
 	"sb": "space-between",
 	"c": "center",
 	"s": "start",
 	"e": "end",
 );
 
-@each $key, $value in $spaceing {
+@each $key, $value in $alignment {
 	.jc#{$key} {
 		justify-content: #{$value};
 	}
 }
 
-@each $key, $value in $spaceing {
+@each $key, $value in $alignment {
 	.ai#{$key} {
 		align-items: #{$value};
 	}
 }
+// -------------------------------------------------------------------------------
+
+// ------------------------------- Spacing ---------------------------------------
+$spacing: (
+	"padding-top": "padding-top",
+	"padding-left": "padding-left",
+	"padding-right": "padding-right",
+	"padding-bottom": "padding-bottom",
+	"margin-top": "margin-top",
+	"margin-left": "margin-left",
+	"margin-right": "margin-right",
+	"margin-bottom": "margin-bottom",
+);
+
+$spacing-vals: (
+      "half": "0.5em",
+	"1": "1em",
+	"2": "2em",
+	"3": "3em",
+	"5": "5em",
+);
+
+@each $direction, $not-used-1 in $spacing {
+	@each $key, $val in $spacing-vals {
+		.#{$direction}-#{$key} {
+			#{$direction}: #{$val};
+		}
+	}
+}
+
 // -------------------------------------------------------------------------------
 
 // -------------------------------- Modal ----------------------------------------
@@ -169,7 +199,7 @@ $spaceing: (
 		background-color: transparent;
 		opacity: 0;
 
-		z-index: -1000;
+		z-index: -10000;
 	}
 }
 
@@ -180,14 +210,14 @@ $spaceing: (
 	top: 0;
 	bottom: 0;
 
-      transition: all 1s ease;
+	transition: all 1s ease;
 
 	&-true {
 		@extend .modal-background;
 		background-color: rgba(0, 0, 0, 0.6);
 		opacity: 1;
 
-            z-index: 2000;
+		z-index: 5000;
 	}
 
 	&-false {
@@ -195,7 +225,7 @@ $spaceing: (
 		background-color: transparent;
 		opacity: 0;
 
-		z-index: -1000;
+		z-index: -10000;
 	}
 }
 
@@ -227,8 +257,6 @@ $spaceing: (
 
 .exit-button {
 	position: absolute;
-	left: 2em;
-	top: 2em;
 
 	display: flex;
 	align-items: center;

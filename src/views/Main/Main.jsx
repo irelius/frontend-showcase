@@ -8,22 +8,22 @@ export default function Main() {
 	const navigate = useNavigate();
 
 	return (
-		<div className="dfr main-page-container">
+		<div className="main-page-container">
 			<section
 				onClick={() => navigate("/api-integration")}
-				className={`dfr jcc aic main-page-columns ${theme}-theme`}
+				className={`main-page-columns pointer ${theme}-theme temp`}
 			>
 				API Integration
 			</section>
 			<section
 				onClick={() => navigate("/interactive-components")}
-				className={`dfr jcc aic main-page-columns ${theme}-theme`}
+				className={`main-page-columns pointer ${theme}-theme wtf`}
 			>
-				Interactive Components
+                        Interactive Components
 			</section>
 			<section
 				onClick={() => navigate("/content-display")}
-				className={`dfr jcc aic main-page-columns ${theme}-theme`}
+				className={`main-page-columns pointer ${theme}-theme`}
 			>
 				Content Display
 			</section>

@@ -31,6 +31,15 @@ button {
   border-radius: 20px;
 }
 
+.button-shadow {
+  transition: filter 0.25s ease;
+}
+
+.button-shadow:hover {
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+  transition: filter 0.25s ease;
+}
+
 .spring-theme {
   border-color: rgb(238, 202, 213);
   background-color: rgb(67, 167, 64);
@@ -452,6 +461,9 @@ button {
   justify-content: center;
   height: 30px;
   width: 30px;
+  border-radius: 90%;
+  background-color: var(--white);
+  transition: filter 0.25s ease;
 }
 
 .display-true {

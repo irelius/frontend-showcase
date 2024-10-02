@@ -8,7 +8,8 @@ export default function InteractiveComponents() {
 	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
 
 	return (
-		<div className="dfr">
+		<div className="dfc">
+                  {/* Side bar section. Set to show when showSideBar is true */}
 			<section>
 				<SideBar
 					options={options}
@@ -17,16 +18,9 @@ export default function InteractiveComponents() {
 				/>
 			</section>
 
-			<section className="dfc">
-				<section>InteractiveComponents header</section>
-				<button
-					onClick={() => {
-						setShowSideBar(true);
-                                    console.log('asdf', showSideBar)
-					}}
-				>
-					show side
-				</button>
+                  {/* Header section. Contains the button to set showSideBar to true so show side bar */}
+			<section className="header">
+				<i class="fa-solid fa-bars fa-2xl pointer" onClick={() => setShowSideBar(true)}></i>
 			</section>
 		</div>
 	);

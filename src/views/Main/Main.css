@@ -23,13 +23,13 @@
 	.main-page-columns {
 		width: 100vw;
 		height: calc(33vh - 20px);
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
 }
 
 @media screen and (max-width: 650px) {
 	.main-page-columns {
-		font-size: 2.5rem;
+		font-size: 2.25rem;
 	}
 }
 

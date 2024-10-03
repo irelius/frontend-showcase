@@ -13,7 +13,7 @@ export default function SideBar({ options, setCurrDemo, showSideBar, setShowSide
 				onClick={() => setShowSideBar(false)}
 				className={`modal-background-${showSideBar}`}
 			></section>
-			<section className={`dfc side-bar-${showSideBar}`}>
+			<section className={`dfc asdf side-bar-${showSideBar}`}>
 				<section className="side-bar-exit-button">
 					<ExitButton setShowModal={setShowSideBar} />
 				</section>

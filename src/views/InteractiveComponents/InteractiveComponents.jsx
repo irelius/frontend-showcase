@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SideBar from "../../components/SideBar/SideBar";
 import "./InteractiveComponents.css";
 
 export default function InteractiveComponents() {
+	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
 	const [currDemo, setCurrDemo] = useState();
 	const [showSideBar, setShowSideBar] = useState(false);
-	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
 
 	return (
 		<div className="dfc">
@@ -13,6 +13,7 @@ export default function InteractiveComponents() {
 			<section>
 				<SideBar
 					options={options}
+                    setCurrDemo={setCurrDemo}
 					showSideBar={showSideBar}
 					setShowSideBar={setShowSideBar}
 				/>
@@ -20,7 +21,7 @@ export default function InteractiveComponents() {
 
                   {/* Header section. Contains the button to set showSideBar to true so show side bar */}
 			<section className="header">
-				<i class="fa-solid fa-bars fa-2xl pointer" onClick={() => setShowSideBar(true)}></i>
+				<i className="fa-solid fa-bars fa-2xl pointer" onClick={() => setShowSideBar(true)}></i>
 			</section>
 		</div>
 	);

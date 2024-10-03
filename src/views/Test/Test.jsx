@@ -12,11 +12,11 @@ function Test() {
 
 	return (
 		<div className="df c gap">
-			<div className="test" style={asdf}>
-				test
+			<div className="official-test" style={asdf}>
+				official-test
 			</div>
 
-			<div style={{ height: "150px" }} className="test-background dfr jcc aic">
+			<div style={{ height: "150px" }} className="official-test-background dfr jcc aic">
 				asdf
 			</div>
 		</div>

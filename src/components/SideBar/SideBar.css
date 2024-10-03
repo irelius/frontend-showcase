@@ -8,8 +8,8 @@
 
 	gap: 5em;
 
-	z-index: 7500;
-	background-color: var(--white);
+	z-index: 10000;
+	background-color: var(--white) !important;
 
 	transition: left 1s ease;
 

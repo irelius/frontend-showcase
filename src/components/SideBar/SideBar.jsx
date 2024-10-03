@@ -13,7 +13,7 @@ export default function SideBar({ options, setCurrDemo, showSideBar, setShowSide
 				onClick={() => setShowSideBar(false)}
 				className={`modal-background-${showSideBar}`}
 			></section>
-			<section className={`dfc asdf side-bar-${showSideBar}`}>
+			<section className={`dfc side-bar-${showSideBar}`}>
 				<section className="side-bar-exit-button">
 					<ExitButton setShowModal={setShowSideBar} />
 				</section>
@@ -24,11 +24,11 @@ export default function SideBar({ options, setCurrDemo, showSideBar, setShowSide
 				</section>
 				<section className="dfc aic">
 					<button
-						className="pointer margin-top padding-left padding-right home-button"
+						className="pointer margin-top padding-left-1 padding-right-1 home-button"
 						style={homeButtonStyling}
 						onClick={() => navigate("/")}
 					>
-						Go Back Home
+						Home
 					</button>
 				</section>
 			</section>

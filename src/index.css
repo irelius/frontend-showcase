@@ -390,7 +390,7 @@ button {
   margin-bottom: 5em;
 }
 
-.modal, .modal-false, .modal-true {
+.modal-background, .modal-background-false, .modal-background-true {
   position: absolute;
   left: 0;
   right: 0;
@@ -402,25 +402,6 @@ button {
   align-items: center;
   height: 100%;
   width: 100%;
-  transition: all 1s ease;
-}
-.modal-true {
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 1;
-  z-index: 10000;
-}
-.modal-false {
-  background-color: transparent;
-  opacity: 0;
-  z-index: -10000;
-}
-
-.modal-background, .modal-background-false, .modal-background-true {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   transition: all 1s ease;
 }
 .modal-background-true {
@@ -448,10 +429,12 @@ button {
 .modal-box-true {
   top: 25%;
   opacity: 1;
+  z-index: 10000;
 }
 .modal-box-false {
   top: 45%;
   opacity: 0;
+  z-index: -10000;
 }
 
 .exit-button {
@@ -464,16 +447,6 @@ button {
   border-radius: 90%;
   background-color: var(--white);
   transition: filter 0.25s ease;
-}
-
-.display-true {
-  display: flex;
-  transition: all 3s ease-in-out;
-}
-
-.display-false {
-  display: none;
-  transition: all 3s ease-in-out;
 }
 
 .border {

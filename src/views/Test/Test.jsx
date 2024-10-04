@@ -2,6 +2,7 @@ import "./Test.css";
 
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 function Test() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -11,13 +12,10 @@ function Test() {
 	};
 
 	return (
-		<div className="df c gap">
-			<div className="official-test" style={asdf}>
-				official-test
-			</div>
-
-			<div style={{ height: "150px" }} className="official-test-background dfr jcc aic">
-				asdf
+		<div>
+			{/* <DotLottieReact src="src/assets/lottie/test.lottie" loop autoplay /> */}
+			<div className="official-test-2">
+				<DotLottieReact src="src/assets/lottie/asdf.json" loop autoplay />
 			</div>
 		</div>
 	);

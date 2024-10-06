@@ -2,13 +2,14 @@ import "./SideBar.css";
 
 import { useNavigate } from "react-router-dom";
 import ExitButton from "../ExitButton/ExitButton";
+import { useEffect } from "react";
 
 export default function SideBar({ options, setCurrDemo, showSideBar, setShowSideBar }) {
 	const navigate = useNavigate();
 
 	return (
 		<div>
-            {/* Section for modal background */}
+			{/* Section for modal background */}
 			<section
 				className={`modal-background-${showSideBar}`}
 				onClick={() => {
@@ -32,6 +33,7 @@ export default function SideBar({ options, setCurrDemo, showSideBar, setShowSide
 								key={i}
 								onClick={() => {
 									setCurrDemo(el.toLowerCase());
+                                    setShowSideBar(false)
 								}}
 							>
 								{el}

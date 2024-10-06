@@ -1,0 +1,21 @@
+.row-container-true,
+.row-container-false {
+	display: grid;
+	transition: all 0.5s ease;
+}
+
+.row-container-true {
+	grid-template-rows: 1fr;
+}
+
+.row-container-false {
+	grid-template-rows: 0fr;
+}
+
+.show-row-true {
+	overflow: auto;
+}
+
+.show-row-false {
+	overflow: hidden;
+}

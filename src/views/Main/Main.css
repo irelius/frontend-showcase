@@ -1,17 +1,67 @@
 .main-page-container {
-      width: 100%;
-      gap: 10px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
 }
 
 .main-page-columns {
-      width: 33.333333%;
-      height: 100vh;
-      display: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: var(--bold);
+	padding: 1em;
+}
 
-      font-size: var(--36);
-      font-weight: var(--bold);
-} 
+/* -------------------------------- For phone -------------------------------- */
+@media screen and (max-width: 1000px) {
+	.main-page-container {
+		flex-direction: column;
+	}
 
-.main-page-columns:hover {
-      cursor: pointer;
+	.main-page-columns {
+		width: 100vw;
+		height: calc(33vh - 20px);
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.main-page-columns {
+		font-size: 2.25rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.main-page-columns {
+		font-size: 2rem;
+	}
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* ----------------------------- Computer/Tablet ----------------------------- */
+@media screen and (min-width: 1001px) {
+	.main-page-columns {
+		width: 33.333333%;
+		height: 100vh;
+		font-size: 2em;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.main-page-columns {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.main-page-container {
+		flex-direction: row;
+	}
+
+	.main-page-columns {
+		font-size: 3em;
+	}
 }

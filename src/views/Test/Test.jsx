@@ -1,7 +1,8 @@
 import "./Test.css";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import LoadingAnimation from "../../components/LoadingAnimation/LoadingAnimation";
 
 function Test() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -10,16 +11,30 @@ function Test() {
 		"--d": "black",
 	};
 
-	return (
-		<div className="df c gap">
-			<div className="test" style={asdf}>
-				test
-			</div>
+	const [load, setLoad] = useState(false);
+	const [test, setTest] = useState(false);
 
-			<div style={{ height: "150px" }} className="test-background dfr jcc aic">
-				asdf
-			</div>
+	useEffect(() => {
+		setTimeout(() => {
+			setLoad(true);
+		}, 2000);
+	}, []);
+
+	useEffect(() => {
+		if (load) {
+			setTimeout(() => {
+				setTest(true);
+			}, 250);
+		}
+	}, [load]);
+
+	return load ? (
+		<div className={`test-${test}`}>
+			test
+			<div className="official-test-2"></div>
 		</div>
+	) : (
+		<LoadingAnimation />
 	);
 }
 

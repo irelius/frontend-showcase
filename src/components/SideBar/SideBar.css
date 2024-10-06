@@ -1,56 +1,59 @@
+/* General side bar stuff */
 .side-bar,
 .side-bar-true,
 .side-bar-false {
 	position: absolute;
 	height: 100vh;
 	width: 20em;
+	padding-bottom: 6em;
 
 	gap: 5em;
 
-      z-index: 7500;
+	z-index: 10000;
 	background-color: var(--white);
-      
+
 	transition: left 1s ease;
+
+	overflow-y: scroll;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none;
+}
+
+.side-bar::-webkit-scrollbar,
+.side-bar-true::-webkit-scrollbar,
+.side-bar-false::-webkit-scrollbar {
+	display: none;
 }
 
 .side-bar-true {
-      left: 0;
+	left: 0;
 }
 
 .side-bar-false {
-      left: -20em;
+	left: -20em;
 }
 
+/* Side bar options */
 .side-bar-options {
 	display: flex;
 	gap: 2em;
 }
 
-.side-bar-options>* {
-      /* border-bottom: 1px solid black; */
-      filter: drop-shadow(0px 5px 7px black);
-      padding-bottom: 1em;
-      width: 15em;
+.side-bar-option {
+	/* border-bottom: 1px solid black; */
+	filter: drop-shadow(0px 5px 7px black);
+	padding-bottom: 1em;
+	width: 15em;
 }
 
-/* .triple-bars {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	left: 2em;
-	top: 2.5em;
-
-	z-index: -1000;
-} */
-
+/* Side bar exit button */
 .side-bar-exit-button {
-      position: relative;
-      top: 2em;
-      left: 16em;
+	position: relative;
+	top: 2em;
+	left: 15em;
 }
 
+/* Side bar home button */
 .home-button {
-      width: fit-content;
+	width: fit-content;
 }

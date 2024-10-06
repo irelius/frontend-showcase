@@ -37,12 +37,12 @@ button {
 }
 
 .button-shadow {
-      transition: filter 0.25s ease;
+	transition: filter 0.25s ease;
 }
 
 .button-shadow:hover {
-      filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
-      transition: filter 0.25s ease;
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+	transition: filter 0.25s ease;
 }
 
 // ------------------------------------ Colors ------------------------------------
@@ -181,43 +181,19 @@ $spacing-vals: (
 // -------------------------------------------------------------------------------
 
 // -------------------------------- Modal ----------------------------------------
-.modal {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-	transition: all 1s ease;
-
-	&-true {
-		@extend .modal;
-		background-color: rgba(0, 0, 0, 0.6);
-		opacity: 1;
-
-		z-index: 10000;
-	}
-
-	&-false {
-		@extend .modal;
-		background-color: transparent;
-		opacity: 0;
-
-		z-index: -10000;
-	}
-}
-
 .modal-background {
 	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
 
 	transition: all 1s ease;
 
@@ -255,12 +231,14 @@ $spacing-vals: (
 		@extend .modal-box;
 		top: 25%;
 		opacity: 1;
+        z-index: 10000;
 	}
 
 	&-false {
 		@extend .modal-box;
 		top: 45%;
 		opacity: 0;
+        z-index: -10000;
 	}
 }
 
@@ -275,17 +253,7 @@ $spacing-vals: (
 
 	border-radius: 90%;
 	background-color: var(--white);
-      transition: filter 0.25s ease;
-}
-
-.display-true {
-	display: flex;
-	transition: all 3s ease-in-out;
-}
-
-.display-false {
-	display: none;
-	transition: all 3s ease-in-out;
+	transition: filter 0.25s ease;
 }
 
 // -------------------------------------------------------------------------------

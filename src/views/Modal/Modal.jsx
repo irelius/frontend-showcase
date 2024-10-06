@@ -12,7 +12,7 @@ export default function Modal() {
 
 	return (
 		<div className="dfc aic jcc full">
-			<div className={`modal-${showModal}`} onClick={(e) => closeModal(e)}>
+			<div className={`modal-background-${showModal}`} onClick={(e) => closeModal(e)}>
 				<section className={`modal-box-${showModal}`} onClick={(e) => e.stopPropagation()}>
 					<section className="modal-exit-button">
 						<ExitButton setShowModal={setShowModal} />

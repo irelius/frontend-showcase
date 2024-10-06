@@ -1,36 +1,85 @@
 /* footer container */
 .footer-container {
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
 	align-items: center;
-      gap: 15px;
 
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
 
-	padding-right: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: auto;
 
-	height: 50px;
-      width: 100;
+	height: 3em;
+	width: 100%;
 
 	font-family: Montserrat;
-	font-size: var(--20);
+	/* font-size: var(--20); */
+	font-size: 1.1em;
 	font-weight: var(--semi-bold);
 
-      z-index: 100000;
+	z-index: 100000;
+}
+
+/* -------------------------------- For phone -------------------------------- */
+@media screen and (max-width: 1000px) {
+	.footer-container {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.footer-container {
+		font-size: 1.15em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.footer-container {
+		font-size: 1.1em;
+	}
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* ----------------------------- Computer/Tablet ----------------------------- */
+@media screen and (min-width: 1001px) {
+	.footer-container {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.footer-container {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.footer-container {
+		font-size: 1.1em;
+	}
+}
+/* --------------------------------------------------------------------------- */
+
+.footer-links {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
 }
 
 .theme-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
-
-      border-radius: 30px;
-      padding: 5px;
-      padding-left: 8px;
-      padding-right: 8px;
+	border-radius: 30px;
+	padding: 0.25em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	text-align: center;
 }

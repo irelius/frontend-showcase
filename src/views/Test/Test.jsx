@@ -1,8 +1,8 @@
 import "./Test.css";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import LoadingAnimation from "../../components/LoadingAnimation/LoadingAnimation";
 
 function Test() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -11,13 +11,30 @@ function Test() {
 		"--d": "black",
 	};
 
-	return (
-		<div>
-			{/* <DotLottieReact src="src/assets/lottie/test.lottie" loop autoplay /> */}
-			<div className="official-test-2">
-				<DotLottieReact src="src/assets/lottie/asdf.json" loop autoplay />
-			</div>
+	const [load, setLoad] = useState(false);
+	const [test, setTest] = useState(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoad(true);
+		}, 2000);
+	}, []);
+
+	useEffect(() => {
+		if (load) {
+			setTimeout(() => {
+				setTest(true);
+			}, 250);
+		}
+	}, [load]);
+
+	return load ? (
+		<div className={`test-${test}`}>
+			test
+			<div className="official-test-2"></div>
 		</div>
+	) : (
+		<LoadingAnimation />
 	);
 }
 

@@ -5,14 +5,31 @@ import ListBuilder2 from "../ListBuilder2";
 import ImageCarousel from "../ImageCarousel";
 import Accordion from "../Accordion/Accordion";
 import SideBar from "../../components/SideBar/SideBar";
+import { LoadingAnimation } from "../../components";
 
 export default function InteractiveComponents() {
+	const [load, setLoad] = useState(false);
+	const [loadTransition, setLoadTransition] = useState(false);
 	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
 	const [currDemo, setCurrDemo] = useState("accordion");
 	const [showSideBar, setShowSideBar] = useState(false);
 
-	return (
-		<div>
+	useEffect(() => {
+		setTimeout(() => {
+			setLoad(true);
+		}, 2000);
+	}, []);
+
+	useEffect(() => {
+		if (load) {
+			setTimeout(() => {
+				setLoadTransition(true);
+			}, 250);
+		}
+	}, [load]);
+
+	return load ? (
+		<div className={`load-transition-${loadTransition}`}>
 			{/* Side bar section. Set to show when showSideBar is true */}
 			<SideBar
 				options={options}
@@ -41,5 +58,7 @@ export default function InteractiveComponents() {
 				)}
 			</div>
 		</div>
+	) : (
+		<LoadingAnimation />
 	);
 }

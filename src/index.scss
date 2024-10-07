@@ -54,6 +54,19 @@ button {
 	transition: filter 0.25s ease;
 }
 
+
+// ------------------------------ Loading Transition ------------------------------
+.load-transition-true {
+	opacity: 1;
+	transition: all 0.75s ease;
+}
+
+.load-transition-false {
+	opacity: 0;
+	transition: all 0.75s ease;
+}
+
+
 // ------------------------------------ Colors ------------------------------------
 .spring-theme {
 	border-color: rgb(238, 202, 213);

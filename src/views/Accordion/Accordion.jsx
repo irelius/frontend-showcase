@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
 import "./Accordion.css";
-import { AccordionRow } from "../../components";
 
-export default function Accordion({ setGoToTop }) {
+import { useContext, useState } from "react";
+import { AccordionRow } from "../../components";
+import { ThemeContext } from "../../context/ThemeContext";
+
+export default function Accordion() {
 	const [closeAll, setCloseAll] = useState(false);
+	const { theme } = useContext(ThemeContext);
 
 	const exampleAccordion = [
 		{
@@ -20,11 +23,19 @@ export default function Accordion({ setGoToTop }) {
 		},
 	];
 
+	const style = {
+		"--border": `0.1em solid var(--${theme}-a1)`,
+		"--bc": `var(--${theme}-a1)`,
+	};
+
 	return (
 		<div className="accordion-container">
 			<div className="accordion-section">
-				<section className="accordion-minimize-button margin-bottom-2">
-					<button className="pointer" id="asdf" onClick={() => setCloseAll(true)}>
+				<section className="minimize-container margin-bottom-2">
+					<button
+						className={`pointer ${theme}-theme minimize-button button-shadow`}
+						onClick={() => setCloseAll(true)}
+					>
 						Minimize
 					</button>
 				</section>
@@ -42,10 +53,16 @@ export default function Accordion({ setGoToTop }) {
 			<section
 				className="go-to-top pointer"
 				onClick={() => {
-					window.scrollTo({ top: 0, smooth: true });
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth",
+					});
 				}}
 			>
-				<i className="fa-solid fa-angle-up fa-3x"></i>
+				<i
+					className={`fa-solid fa-circle-chevron-up fa-3x ${theme}-a2-color go-to-top-button`}
+					style={style}
+				></i>
 			</section>
 		</div>
 	);

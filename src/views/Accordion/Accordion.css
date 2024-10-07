@@ -16,12 +16,33 @@
     width: 60%;
 }
 
-.accordion-minimize-button {
+.minimize-container {
     display: flex;
     justify-content: flex-end;
+}
+
+.minimize-button {
+    font-weight: var(--bold);
 }
 
 .accordion-rows {
     display: flex;
     flex-direction: column;
+}
+
+.go-to-top {
+    position: fixed;
+    right: 5em;
+    bottom: 5em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-to-top-button {
+    border: var(--border);
+    border-radius: 90%;
+
+    background-color: var(--bc);
 }

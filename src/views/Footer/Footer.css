@@ -17,11 +17,8 @@
 	width: 100%;
 
 	font-family: Montserrat;
-	/* font-size: var(--20); */
 	font-size: 1.1em;
 	font-weight: var(--semi-bold);
-
-	/* z-index: 5000; */
 }
 
 /* -------------------------------- For phone -------------------------------- */

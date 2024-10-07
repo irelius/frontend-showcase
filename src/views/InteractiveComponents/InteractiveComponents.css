@@ -17,11 +17,3 @@
     padding: 1.5em;
     padding-bottom: 2em;
 }
-
-
-.go-to-top {
-    position: fixed;
-    right: 2em;
-    bottom: 5em;
-    background-color: orange;
-}

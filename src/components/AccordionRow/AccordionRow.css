@@ -7,7 +7,7 @@
 	align-items: center;
 	height: 3em;
 	font-size: var(--20);
-	font-weight: var(--semi-bold);
+	font-weight: var(--bold);
 
     background-color: orange;
     padding: 1em;

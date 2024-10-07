@@ -1,0 +1,71 @@
+.accordion-row-container {
+	max-height: 100vh;
+}
+
+.row-header {
+	display: flex;
+	align-items: center;
+	height: 3em;
+	font-size: var(--20);
+	font-weight: var(--bold);
+	padding: 1em;
+}
+
+.row-container-true,
+.row-container-false {
+	display: grid;
+	max-height: 20em;
+	transition: all 0.75s ease;
+}
+
+.row-container-true {
+	grid-template-rows: 1fr;
+}
+
+.row-container-false {
+	grid-template-rows: 0fr;
+}
+
+.show-row-true,
+.show-row-false {
+	line-height: 1.75em;
+	overflow: auto;
+	scrollbar-width: thin;
+	margin: 1em;
+}
+
+/* -------------------------------- For phone -------------------------------- */
+@media screen and (max-width: 1000px) {
+	.show-row-true,
+	.show-row-false {
+		font-size: var(--20);
+	}
+}
+
+@media screen and (max-width: 675px) {
+	.row-header {
+		height: 2em;
+		font-weight: var(--semi-bold);
+		padding: 0.75em;
+	}
+
+	.show-row-true,
+	.show-row-false {
+		font-size: var(--16);
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.row-header {
+		font-size: var(--16);
+		padding: 0.5em;
+	}
+
+	.show-row-true,
+	.show-row-false {
+		line-height: 1.5em;
+		font-size: var(--14);
+	}
+}
+
+/* --------------------------------------------------------------------------- */

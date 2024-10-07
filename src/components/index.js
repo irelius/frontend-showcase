@@ -1,7 +1,11 @@
+import AccordionRow from "./AccordionRow"
 import ExitButton from "./ExitButton";
+import LoadingAnimation from "./LoadingAnimation/LoadingAnimation";
 import SideBar from "./SideBar";
 
 export {
-      ExitButton,
-      SideBar,
+    AccordionRow,
+    ExitButton,
+    LoadingAnimation,
+    SideBar,
 }

@@ -21,8 +21,13 @@
   --bold: 700;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: Montserrat;
+  font-size: var(--20);
 }
 
 button {
@@ -402,17 +407,17 @@ button {
   align-items: center;
   height: 100%;
   width: 100%;
-  transition: all 1s ease;
+  transition: all 0.75s ease;
 }
 .modal-background-true {
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
-  z-index: 5000;
+  z-index: 500;
 }
 .modal-background-false {
   background-color: transparent;
   opacity: 0;
-  z-index: -10000;
+  z-index: -200;
 }
 
 .modal-box, .modal-box-false, .modal-box-true {
@@ -429,12 +434,12 @@ button {
 .modal-box-true {
   top: 25%;
   opacity: 1;
-  z-index: 10000;
+  z-index: 1000;
 }
 .modal-box-false {
   top: 45%;
   opacity: 0;
-  z-index: -10000;
+  z-index: -200;
 }
 
 .exit-button {

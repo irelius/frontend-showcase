@@ -1,11 +1,27 @@
+.ic-container {
+    padding-bottom: 5em;
+}
+
 .header {
-	/* background-color: orange; */
-	position: relative;
+	position: fixed;
 
-	left: 0;
-	right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
 
-      height: 30px;
+    background-color: var(--white);
 
-      margin: 1.5em;
+	height: 30px;
+    width: auto;
+
+    padding: 1.5em;
+    padding-bottom: 2em;
+}
+
+
+.go-to-top {
+    position: fixed;
+    right: 2em;
+    bottom: 5em;
+    background-color: orange;
 }

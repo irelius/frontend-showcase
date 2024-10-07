@@ -38,17 +38,3 @@
 	width: 10vw;
 	/* object-fit: contain; */
 }
-
-.test-true {
-	opacity: 1;
-	transition: 0.5s ease all;
-
-    background-color: orange;
-}
-
-.test-false {
-	opacity: 0;
-	transition: 0.5s ease all;
-
-    background-color: orange;
-}

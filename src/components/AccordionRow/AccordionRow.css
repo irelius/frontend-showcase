@@ -1,7 +1,23 @@
+.accordion-row-container {
+	max-height: 100vh;
+}
+
+.row-header {
+	display: flex;
+	align-items: center;
+	height: 3em;
+	font-size: var(--20);
+	font-weight: var(--semi-bold);
+
+    background-color: orange;
+    padding: 1em;
+}
+
 .row-container-true,
 .row-container-false {
 	display: grid;
-	transition: all 0.5s ease;
+	max-height: 25em;
+	transition: all 0.75s ease;
 }
 
 .row-container-true {
@@ -12,10 +28,10 @@
 	grid-template-rows: 0fr;
 }
 
-.show-row-true {
-	overflow: auto;
-}
-
+.show-row-true,
 .show-row-false {
-	overflow: hidden;
+	line-height: 1.75em;
+	overflow: auto;
+	scrollbar-width: thin;
+    margin: 1em;
 }

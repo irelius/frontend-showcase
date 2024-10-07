@@ -31,7 +31,7 @@ export default function Accordion() {
 	return (
 		<div className="accordion-container">
 			<div className="accordion-section">
-				<section className="minimize-container margin-bottom-2">
+				<section className="minimize-container margin-bottom-1">
 					<button
 						className={`pointer ${theme}-theme minimize-button button-shadow`}
 						onClick={() => setCloseAll(true)}

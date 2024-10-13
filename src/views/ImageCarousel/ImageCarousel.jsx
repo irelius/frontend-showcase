@@ -52,7 +52,6 @@ export default function ImageCarousel() {
 				<aside className={`gallery-switch-container-right`}>
 					<i className={`fa-solid fa-moon fa-lg moon-${!galleryLight} `} />
 				</aside>
-				<section className="switch-barrier"></section>
                 <section className={`light-circle-${galleryLight}`}></section>
 			</div>
 		</div>

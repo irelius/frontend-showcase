@@ -68,7 +68,7 @@
 	align-items: center;
 
 	height: 3em;
-	width: 3.8em;
+	width: 3.25em;
 
 	padding: auto;
 	padding-left: 15px;
@@ -78,16 +78,18 @@
 
 .gallery-switch-container-left,
 .gallery-switch-container-right {
-	border: 1px solid black;
+	border: 0.05em solid black;
 	overflow: hidden;
 }
 
 .gallery-switch-container-left {
+	border-right: none;
 	border-top-left-radius: 90px;
 	border-bottom-left-radius: 90px;
 }
 
 .gallery-switch-container-right {
+	border-left: none;
 	border-top-right-radius: 90px;
 	border-bottom-right-radius: 90px;
 }
@@ -97,50 +99,39 @@
 .moon-true,
 .moon-false {
 	position: relative;
-	transition: left 0.5s ease;
+	transition: left 0.8s ease;
 	z-index: 10;
 }
 
 .sun-true {
-	left: 0.07em;
+	left: 0.09em;
 }
 
 .sun-false {
-	left: 3.75em;
+	left: 2.9em;
 }
 
 .moon-true {
-	left: 0.85em;
+	left: 0.4em;
 }
 
 .moon-false {
-	left: -2.88em;
-}
-
-.switch-barrier {
-	position: absolute;
-	height: 97%;
-	width: 0.5em;
-
-	background-color: white;
-
-	z-index: 10;
-	box-shadow: -2px 0px 5px -2px rgba(0, 0, 0, 0.6), 2px 0px 5px -2px rgba(0, 0, 0, 0.6);
+	left: -2.4em;
 }
 
 .light-circle-true,
 .light-circle-false {
 	position: absolute;
 
-	height: 40px;
-	width: 40px;
+	height: 2em;
+	width: 2em;
 
-	border: 0.075em solid black;
+	border: 0.05em solid black;
 	border-radius: 90%;
 
 	z-index: 5;
 
-	transition: left 0.5s ease;
+	transition: left 0.8s ease;
 
 	background-color: white;
 }
@@ -150,5 +141,5 @@
 }
 
 .light-circle-false {
-	left: 5.1em;
+	left: 4em;
 }

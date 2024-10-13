@@ -46,14 +46,14 @@ export default function ImageCarousel() {
 				<i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
 			</div>
 			<div className="gallery-light-container pointer" onClick={() => handleLightSwitch()}>
-				<i className={`fa-solid fa-sun fa-xl sun-${galleryLight}`}></i>
-				<i className={`fa-solid fa-moon fa-xl moon-${!galleryLight} `}></i>
-				<aside className={`gallery-switch-container-left`}></aside>
-				<aside className={`gallery-switch-container-right`}></aside>
-				{/* <section className="switch-barrier"></section> */}
-				{/* <aside className={`gallery-light-switch-left`}></aside>
-
-				<aside className={`gallery-light-switch-right`}></aside> */}
+				<aside className={`gallery-switch-container-left`}>
+					<i className={`fa-solid fa-sun fa-lg sun-${galleryLight}`} />
+				</aside>
+				<aside className={`gallery-switch-container-right`}>
+					<i className={`fa-solid fa-moon fa-lg moon-${!galleryLight} `} />
+				</aside>
+				<section className="switch-barrier"></section>
+                <section className={`light-circle-${galleryLight}`}></section>
 			</div>
 		</div>
 	);

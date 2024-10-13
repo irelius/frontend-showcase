@@ -11,7 +11,7 @@ export default function InteractiveComponents() {
 	const [load, setLoad] = useState(false);
 	const [loadTransition, setLoadTransition] = useState(false);
 	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
-	const [currDemo, setCurrDemo] = useState("accordion");
+	const [currDemo, setCurrDemo] = useState("image carousel");
 	const [showSideBar, setShowSideBar] = useState(false);
 
 	useEffect(() => {
@@ -27,6 +27,8 @@ export default function InteractiveComponents() {
 			}, 250);
 		}
 	}, [load]);
+
+    // TODO: set animation transition between the different options
 
 	return load ? (
 		<div className={`load-transition-${loadTransition}`}>

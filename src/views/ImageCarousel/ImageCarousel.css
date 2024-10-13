@@ -1,0 +1,145 @@
+.carousel-container {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 8.5em);
+	width: 100%;
+}
+
+.carousel-images-container {
+	display: flex;
+	flex-direction: row;
+
+	gap: 2em;
+
+	position: fixed;
+	left: calc(50% - 7.5em);
+}
+
+.carousel-button-left,
+.carousel-button-right {
+	position: fixed;
+
+	border-radius: 90%;
+
+	opacity: 0.5;
+	transition: opacity 0.5s ease;
+}
+.carousel-button-left:hover,
+.carousel-button-right:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+.carousel-button-left {
+	left: 3em;
+}
+
+.carousel-button-right {
+	right: 3em;
+}
+
+.carousel-image {
+	height: auto;
+	width: 15em;
+	object-fit: cover;
+
+	flex-wrap: wrap;
+}
+
+.gallery-light-container {
+	position: fixed;
+	top: 4.5em;
+	right: 3em;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 3em;
+	
+    border-radius: 30px;
+}
+
+.gallery-light-container > aside {
+	display: flex;
+	align-items: center;
+
+	height: 3em;
+	width: 4em;
+
+	padding: auto;
+	padding-left: 15px;
+
+	background-color: orange;
+}
+
+.gallery-switch-container-left {
+	border: 1px solid black;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-right: transparent;
+
+	z-index: 0;
+
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8) inset;
+}
+
+.gallery-switch-container-right {
+	border: 1px solid black;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border-left: transparent;
+
+	z-index: 0;
+
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8) inset;
+}
+
+.sun-true,
+.sun-false,
+.moon-true,
+.moon-false {
+	position: absolute;
+	transition: left 0.5s ease-out;
+}
+
+.sun-true {
+	left: 0.7em;
+	z-index: 10;
+	transition: z-index 1.4s ease-in, left 0.75s ease !important;
+}
+
+.sun-false {
+	left: 3.8em;
+	z-index: 0;
+	transition: z-index 0.25s ease-out, left 0.75s ease !important;
+}
+
+.moon-true {
+	left: 3.8em;
+	z-index: 10;
+	transition: z-index 1.4s ease-in, left 0.75s ease !important;
+}
+
+.moon-false {
+	left: 0.7em;
+	z-index: 0;
+	transition: z-index 0.25s ease-out, left 0.75s ease !important;
+}
+
+.switch-barrier {
+	position: absolute;
+	height: 97%;
+	width: 20px;
+
+	background-color: white;
+
+	/* transform: skew(-25deg); */
+
+	z-index: 10;
+
+	/* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6); */
+	box-shadow: -2px 0px 5px -2px rgba(0, 0, 0, 0.6), 2px 0px 5px -2px rgba(0, 0, 0, 0.6);
+}

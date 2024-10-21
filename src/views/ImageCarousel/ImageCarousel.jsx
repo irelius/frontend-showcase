@@ -39,10 +39,25 @@ export default function ImageCarousel() {
 			{/* Background shading for gallery light effect  */}
 			<div className={`carousel-background-${!galleryLight}`}></div>
 
-			{/* left button */}
-			<div className="carousel-button-left pointer" onClick={() => switchImage("left")}>
-				<i className="fa-solid fa-circle-arrow-left fa-2xl"></i>
+			{/* switch for gallery light */}
+			<div
+				className={`gallery-switch-container pointer switch-${!galleryLight} ${theme}-theme`}
+				onClick={() => handleLightSwitch()}
+			>
+				<aside className={`gallery-switch-container-left`}>
+					<i className={`fa-solid fa-sun fa-lg sun-${!galleryLight}`} />
+				</aside>
+				<aside className={`gallery-switch-container-right`}>
+					<i className={`fa-regular fa-moon fa-lg moon-${galleryLight} `}></i>
+				</aside>
+				<section className={`light-circle-${!galleryLight}`}></section>
 			</div>
+
+			{/* left button */}
+			<i
+				className="fa-solid fa-circle-arrow-left fa-2xl carousel-button-left pointer"
+				onClick={() => switchImage("left")}
+			></i>
 
 			{/* main carousel images container */}
 			<div
@@ -52,7 +67,7 @@ export default function ImageCarousel() {
 				{images.map((el, i) => {
 					return (
 						<div className="carousel-image-container">
-                            <div className={`photographer-${i === currentImage}`}>By {credits[el]}</div>
+							<div className={`photographer-${i === currentImage}`}>By {credits[el]}</div>
 							<img
 								onMouseOver={() => setHover(true)}
 								onMouseOut={() => setHover(false)}
@@ -69,23 +84,26 @@ export default function ImageCarousel() {
 			</div>
 
 			{/* right button */}
-			<div className="carousel-button-right pointer" onClick={() => switchImage("right")}>
-				<i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
-			</div>
+			<i
+				className="fa-solid fa-circle-arrow-right fa-2xl carousel-button-right pointer"
+				onClick={() => switchImage("right")}
+			></i>
 
-			{/* switch for gallery light */}
-			<div
-				className={`gallery-switch-container pointer switch-${!galleryLight} ${theme}-theme`}
-				onClick={() => handleLightSwitch()}
+			<section
+				className="carousel-quick-container"
+				style={{ left: `calc(50% - 0.1em - ${currentImage}em)` }}
 			>
-				<aside className={`gallery-switch-container-left`}>
-					<i className={`fa-solid fa-sun fa-lg sun-${!galleryLight}`} />
-				</aside>
-				<aside className={`gallery-switch-container-right`}>
-					<i className={`fa-regular fa-moon fa-lg moon-${galleryLight} `}></i>
-				</aside>
-				<section className={`light-circle-${!galleryLight}`}></section>
-			</div>
+				{images.map((el, i) => {
+					return (
+						<div
+							className={`test-${i === currentImage} pointer`}
+							onClick={() => setCurrentImage(i)}
+						>
+							<i className="fa-regular fa-circle fa-2xs"></i>
+						</div>
+					);
+				})}
+			</section>
 		</div>
 	);
 }

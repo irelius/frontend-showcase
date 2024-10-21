@@ -88,7 +88,7 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	border: 0.25em solid rgba(0, 0, 0, 0.75);
+	border: 0.35em solid rgb(0, 0, 0);
 }
 
 .image-focus-true {
@@ -135,23 +135,23 @@
 
 	opacity: 0.5;
 	transition: all 0.5s ease;
-
+    background-color: white;
+    
 	z-index: 40;
 }
 
 .carousel-button-left:hover,
 .carousel-button-right:hover {
-	opacity: 1;
-	background-color: white;
-	transition: all 0.5s ease;
+    opacity: 1;
+	transition: opacity 0.5s ease;
 }
 
 .carousel-button-left {
-	left: 3em;
+	left: 2.5em;
 }
 
 .carousel-button-right {
-	right: 3em;
+	right: 2.5em;
 }
 
 /* Gallery Light Switch */
@@ -255,4 +255,37 @@
 
 .light-circle-false {
 	left: 4em;
+}
+
+/* Image Quick Select  */
+.carousel-quick-container {
+    position: absolute;
+    z-index: 10;
+
+    display: flex;
+    gap: 0.3em;
+
+    bottom: 1em;
+    transition: all 0.75s ease;
+
+}
+
+.test-true, .test-false {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.65em;
+    width: 0.65em;
+    border-radius: 100%;
+    
+    transition: all 0.25s ease;
+}
+
+.test-true {
+    border: 1px solid black;
+    background-color: black;
+}
+
+.test-false {
+    color: rgba(0, 0, 0, 0.5);
 }

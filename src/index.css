@@ -21,6 +21,11 @@
   --bold: 700;
 }
 
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: Montserrat;
   font-size: var(--20);

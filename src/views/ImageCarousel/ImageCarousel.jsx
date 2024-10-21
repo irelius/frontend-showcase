@@ -70,11 +70,12 @@ export default function ImageCarousel() {
 			>
 				{images.map((el, i) => {
 					return (
-						<div className="carousel-image-container">
+						<div className="carousel-image-container pointer">
 							<div className={`photographer-${i === currentImage}`}>By {credits[el]}</div>
 							<img
 								onMouseOver={() => setHover(true)}
 								onMouseOut={() => setHover(false)}
+                                onClick={() => setCurrentImage(i)}
 								key={i}
 								className={`carousel-image image-focus-${
 									i === currentImage

@@ -1,17 +1,13 @@
+import "./ApiIntegration.css";
 import { useContext, useEffect, useState } from "react";
-import "./InteractiveComponents.css";
-import ListBuilder1 from "../ListBuilder1";
-import ListBuilder2 from "../ListBuilder2";
-import ImageCarousel from "../ImageCarousel";
-import Accordion from "../Accordion/Accordion";
-import SideBar from "../../components/SideBar/SideBar";
-import { LoadingAnimation } from "../../components";
 import { ThemeContext } from "../../context/ThemeContext";
+import { LoadingAnimation } from "../../components";
+import SideBar from "../../components/SideBar/SideBar";
 
-export default function InteractiveComponents() {
+export default function ApiIntegration() {
 	const [load, setLoad] = useState(false);
 	const [loadTransition, setLoadTransition] = useState(false);
-	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
+	const options = ["Google Maps", "Weather", "Stocks"];
 	const [currDemo, setCurrDemo] = useState("image carousel");
 	const [showSideBar, setShowSideBar] = useState(false);
 
@@ -49,15 +45,13 @@ export default function InteractiveComponents() {
 			</section>
 
 			{/* Main section of interactive components */}
-			<div className="ic-container">
-				{currDemo === "list builder 1" ? (
-					<ListBuilder1 />
-				) : currDemo === "list builder 2" ? (
-					<ListBuilder2 />
-				) : currDemo === "image carousel" ? (
-					<ImageCarousel />
-				) : currDemo === "accordion" ? (
-					<Accordion />
+			<div className="ai-container">
+				{currDemo === "google maps" ? (
+					<>asdf maps</>
+				) : currDemo === "weather" ? (
+					<>asdf weather</>
+				) : currDemo === "stocks" ? (
+					<>asdf</>
 				) : (
 					<div></div>
 				)}

@@ -21,11 +21,6 @@
   --bold: 700;
 }
 
-html,
-body {
-  scrollbar-gutter: stable;
-}
-
 body {
   font-family: Montserrat;
   font-size: var(--20);
@@ -407,6 +402,18 @@ button {
 
 .margin-bottom-5 {
   margin-bottom: 5em;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5em;
+  z-index: 10;
 }
 
 .modal-background, .modal-background-false, .modal-background-true {

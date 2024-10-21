@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 		path: "/interactive-components",
 		element: <InteractiveComponents />,
 	},
-      {
+	{
 		path: "/test",
 		element: <Test />,
 	},
@@ -31,9 +31,7 @@ function App() {
 	return (
 		<>
 			<ThemeProvider>
-				<section className="footer-container">
-					<Footer />
-				</section>
+				<Footer />
 				<RouterProvider router={router} />
 			</ThemeProvider>
 		</>

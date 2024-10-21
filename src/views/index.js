@@ -8,7 +8,6 @@ import Main from "./Main"
 import Modal from "./Modal"
 import Parallax from "./Parallax"
 import PopOver from "./PopOver"
-import SlidingPane from "./SlidingPane"
 import Test from "./Test"
 import ThemeChanger from "./ThemeChanger"
 import ToolTip from "./ToolTip"
@@ -24,7 +23,6 @@ export {
       Modal,
       Parallax,
       PopOver,
-      SlidingPane,
       Test,
       ThemeChanger,
       ToolTip,

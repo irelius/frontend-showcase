@@ -1,0 +1,291 @@
+.carousel-container {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 8.5em);
+	width: 100%;
+}
+
+/* Carousel background - Gallery Light CSS */
+.carousel-background-true,
+.carousel-background-false {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+
+	transition: all 0.5s ease;
+
+	z-index: 10;
+}
+
+.carousel-background-true {
+	background-color: transparent;
+}
+
+.carousel-background-false {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-light-false,
+.carousel-light-true {
+	position: fixed;
+
+	height: 28em;
+	width: 20em;
+}
+
+.carousel-light-true {
+	background-color: transparent;
+	transition: all 0.5s ease;
+}
+
+.carousel-light-false {
+	background-color: rgb(255, 246, 198);
+	filter: blur(0.5em);
+	transition: all 0.5s ease;
+	z-index: 20;
+}
+
+/* Carousel images  */
+.carousel-images-container {
+	display: flex;
+	flex-direction: row;
+	gap: 5em;
+	position: fixed;
+	z-index: 30;
+	transition: all 0.75s ease;
+}
+
+.carousel-image-container {
+	height: auto;
+	width: 15em;
+	
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-true {
+    position: relative;
+    top: -0.5em;
+    transition: all 0.75s ease;
+    font-size: var(--14);
+    font-style: italic;
+}
+
+.photographer-false {
+    position: relative;
+    top: 1.5em;
+    transition: all 0.75s ease;
+    font-size: var(--16);
+    font-style: italic;
+}
+
+.carousel-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border: 0.35em solid rgb(0, 0, 0);
+}
+
+.image-focus-true {
+	z-index: 30;
+	filter: brightness(1);
+	transition: all 0.75s ease;
+}
+
+.image-focus-true.shadow-false {
+	z-index: 30;
+	filter: brightness(1) drop-shadow(0.75em 0.75em 1px rgba(0, 0, 0, 0.6));
+	transition: all 0.75s ease;
+}
+
+.image-focus-false.shadow-false {
+	z-index: 30;
+	filter: brightness(0.5) drop-shadow(0.75em 0.75em 1px rgba(0, 0, 0, 0.6));
+	transition: all 0.75s ease;
+}
+
+.image-focus-true.shadow-true {
+	z-index: 30;
+	filter: brightness(1) drop-shadow(0em 0.75em 1px rgba(0, 0, 0, 0.6));
+	transition: all 0.75s ease;
+}
+
+.image-focus-false.shadow-true {
+	z-index: 30;
+	filter: brightness(0.5);
+	transition: all 0.75s ease;
+}
+
+/* Carousel navigation button */
+.carousel-button-left,
+.carousel-button-right {
+	position: fixed;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+
+	opacity: 0.5;
+	transition: all 0.5s ease;
+    background-color: white;
+    
+	z-index: 40;
+}
+
+.carousel-button-left:hover,
+.carousel-button-right:hover {
+    opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+.carousel-button-left {
+	left: 2.5em;
+}
+
+.carousel-button-right {
+	right: 2.5em;
+}
+
+/* Gallery Light Switch */
+.gallery-switch-container {
+	position: fixed;
+	top: 4.75em;
+	right: 1.25em;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	height: 3em;
+
+	border-radius: 100px;
+	z-index: 20;
+}
+
+.switch-true {
+	transition: all 0.75s ease;
+}
+
+.switch-false {
+	transition: all 0.75s ease;
+}
+
+.gallery-switch-container-left,
+.gallery-switch-container-right {
+	display: flex;
+	align-items: center;
+
+	height: 3em;
+	width: 3.25em;
+
+	padding: auto;
+	padding-left: 15px;
+	border: 0.05em solid;
+	overflow: hidden;
+
+	color: black;
+}
+
+.gallery-switch-container-left {
+	border-right: none;
+	border-top-left-radius: 90px;
+	border-bottom-left-radius: 90px;
+}
+
+.gallery-switch-container-right {
+	border-left: none;
+	border-top-right-radius: 90px;
+	border-bottom-right-radius: 90px;
+}
+
+.sun-true,
+.sun-false,
+.moon-true,
+.moon-false {
+	position: relative;
+	transition: left 0.8s ease;
+	z-index: 10;
+}
+
+.sun-true {
+	left: 0.07em;
+}
+
+.sun-false {
+	left: 2.9em;
+}
+
+.moon-true {
+	left: 0.4em;
+}
+
+.moon-false {
+	left: -2.4em;
+}
+
+.light-circle-true,
+.light-circle-false {
+	position: absolute;
+
+	height: 2em;
+	width: 2em;
+
+	border: 0.05em solid black;
+	border-radius: 90%;
+
+	z-index: 5;
+
+	transition: left 0.8s ease;
+
+	background-color: white;
+}
+
+.light-circle-true {
+	left: 0.5em;
+}
+
+.light-circle-false {
+	left: 4em;
+}
+
+/* Image Quick Select  */
+.carousel-quick-container {
+    position: absolute;
+    z-index: 40;
+
+    display: flex;
+    gap: 0.3em;
+
+    bottom: 1em;
+    transition: all 0.75s ease;
+
+}
+
+.test-true, .test-false {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.65em;
+    width: 0.65em;
+    border-radius: 100%;
+    
+    transition: all 0.25s ease;
+}
+
+.test-true {
+    border: 1px solid black;
+    background-color: black;
+}
+
+.test-false {
+    color: rgba(0, 0, 0, 0.5);
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./InteractiveComponents.css";
 import ListBuilder1 from "../ListBuilder1";
 import ListBuilder2 from "../ListBuilder2";
@@ -6,6 +6,7 @@ import ImageCarousel from "../ImageCarousel";
 import Accordion from "../Accordion/Accordion";
 import SideBar from "../../components/SideBar/SideBar";
 import { LoadingAnimation } from "../../components";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export default function InteractiveComponents() {
 	const [load, setLoad] = useState(false);
@@ -13,6 +14,8 @@ export default function InteractiveComponents() {
 	const options = ["List Builder 1", "List Builder 2", "Image Carousel", "Accordion"];
 	const [currDemo, setCurrDemo] = useState("image carousel");
 	const [showSideBar, setShowSideBar] = useState(false);
+
+	const { theme } = useContext(ThemeContext);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -28,7 +31,7 @@ export default function InteractiveComponents() {
 		}
 	}, [load]);
 
-    // TODO: set animation transition between the different options
+	// TODO: set animation transition between the different options
 
 	return load ? (
 		<div className={`load-transition-${loadTransition}`}>
@@ -41,7 +44,7 @@ export default function InteractiveComponents() {
 			/>
 
 			{/* Header section. Contains the button to set showSideBar to true so show side bar */}
-			<section className="header">
+			<section className={`header ${theme}-theme`}>
 				<i className="fa-solid fa-bars fa-2xl pointer" onClick={() => setShowSideBar(true)}></i>
 			</section>
 

@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./ImageCarousel.css";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export default function ImageCarousel() {
+	const { theme } = useContext(ThemeContext);
+
 	const images = [1, 2, 3, 4, 5];
 	const credits = {
 		1: "Lisett Kruusimäe",
@@ -11,48 +14,77 @@ export default function ImageCarousel() {
 		5: "Yasemin Gunes",
 	};
 
-	const [galleryLight, setGalleryLight] = useState(true);
+	const [galleryLight, setGalleryLight] = useState(false);
+	const [currentImage, setCurrentImage] = useState(0);
+	const [hover, setHover] = useState(false);
 
 	const handleLightSwitch = () => {
 		setGalleryLight((prev) => !prev);
 	};
 
-	// useEffect(() => {
-	//     setTimeout(() => {
-	//         console.log('booba')
-	// 		setLeftZ((prev) => !prev);
-	// 		setRightZ((prev) => !prev);
-	// 	}, 500);
-	// }, [moonZ]);
+	const switchImage = (direction) => {
+		if (direction === "left" && currentImage > 0) {
+			setCurrentImage((prev) => prev - 1);
+		}
+		if (direction === "right" && currentImage < images.length - 1) {
+			setCurrentImage((prev) => prev + 1);
+		}
+	};
 
 	return (
 		<div className="carousel-container">
-			<div className="carousel-button-left pointer">
+			{/* gallery lighting effect */}
+			<div className={`carousel-light-${!galleryLight}`}></div>
+
+			{/* Background shading for gallery light effect  */}
+			<div className={`carousel-background-${!galleryLight}`}></div>
+
+			{/* left button */}
+			<div className="carousel-button-left pointer" onClick={() => switchImage("left")}>
 				<i className="fa-solid fa-circle-arrow-left fa-2xl"></i>
 			</div>
-			<div className="carousel-images-container">
+
+			{/* main carousel images container */}
+			<div
+				className={`carousel-images-container`}
+				style={{ left: `calc(50% - 7.5em - ${20 * currentImage}em)` }}
+			>
 				{images.map((el, i) => {
 					return (
-						<img
-							key={i}
-							className="carousel-image"
-							src={`src/assets/img/carousel/${el}.jpg`}
-							alt={`Image by ${credits.el}`}
-						/>
+						<div className="carousel-image-container">
+                            <div className={`photographer-${i === currentImage}`}>By {credits[el]}</div>
+							<img
+								onMouseOver={() => setHover(true)}
+								onMouseOut={() => setHover(false)}
+								key={i}
+								className={`carousel-image image-focus-${
+									i === currentImage
+								} shadow-${galleryLight}`}
+								src={`src/assets/img/carousel/${el}.jpg`}
+								alt={`Image by ${credits[el]}`}
+							/>
+						</div>
 					);
 				})}
 			</div>
-			<div className="carousel-button-right pointer">
+
+			{/* right button */}
+			<div className="carousel-button-right pointer" onClick={() => switchImage("right")}>
 				<i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
 			</div>
-			<div className="gallery-light-container pointer" onClick={() => handleLightSwitch()}>
+
+			{/* switch for gallery light */}
+			<div
+				className={`gallery-switch-container pointer switch-${!galleryLight} ${theme}-theme`}
+				onClick={() => handleLightSwitch()}
+			>
 				<aside className={`gallery-switch-container-left`}>
-					<i className={`fa-solid fa-sun fa-lg sun-${galleryLight}`} />
+					<i className={`fa-solid fa-sun fa-lg sun-${!galleryLight}`} />
 				</aside>
 				<aside className={`gallery-switch-container-right`}>
-					<i className={`fa-solid fa-moon fa-lg moon-${!galleryLight} `} />
+					<i className={`fa-regular fa-moon fa-lg moon-${galleryLight} `}></i>
 				</aside>
-                <section className={`light-circle-${galleryLight}`}></section>
+				<section className={`light-circle-${!galleryLight}`}></section>
 			</div>
 		</div>
 	);

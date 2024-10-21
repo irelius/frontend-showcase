@@ -54,10 +54,14 @@ export default function ImageCarousel() {
 			</div>
 
 			{/* left button */}
-			<i
-				className="fa-solid fa-circle-arrow-left fa-2xl carousel-button-left pointer"
-				onClick={() => switchImage("left")}
-			></i>
+			{currentImage > 0 ? (
+				<i
+					className="fa-solid fa-circle-arrow-left fa-2xl carousel-button-left pointer"
+					onClick={() => switchImage("left")}
+				></i>
+			) : (
+				<></>
+			)}
 
 			{/* main carousel images container */}
 			<div
@@ -84,10 +88,14 @@ export default function ImageCarousel() {
 			</div>
 
 			{/* right button */}
-			<i
-				className="fa-solid fa-circle-arrow-right fa-2xl carousel-button-right pointer"
-				onClick={() => switchImage("right")}
-			></i>
+			{currentImage < images.length - 1 ? (
+				<i
+					className="fa-solid fa-circle-arrow-right fa-2xl carousel-button-right pointer"
+					onClick={() => switchImage("right")}
+				></i>
+			) : (
+				<></>
+			)}
 
 			<section
 				className="carousel-quick-container"

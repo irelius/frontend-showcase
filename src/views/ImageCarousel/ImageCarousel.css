@@ -260,7 +260,7 @@
 /* Image Quick Select  */
 .carousel-quick-container {
     position: absolute;
-    z-index: 10;
+    z-index: 40;
 
     display: flex;
     gap: 0.3em;

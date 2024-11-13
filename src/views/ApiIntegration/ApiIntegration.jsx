@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LoadingAnimation } from "../../components";
 import SideBar from "../../components/SideBar/SideBar";
+import Weather from "../Weather/Weather";
 
 export default function ApiIntegration() {
 	const [load, setLoad] = useState(false);
@@ -49,7 +50,7 @@ export default function ApiIntegration() {
 				{currDemo === "google maps" ? (
 					<>asdf maps</>
 				) : currDemo === "weather" ? (
-					<>asdf weather</>
+					<Weather />
 				) : currDemo === "stocks" ? (
 					<>asdf</>
 				) : (

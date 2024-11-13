@@ -1,13 +1,13 @@
-import "./Test.css";
+import "./Weather.css";
 
 import { useContext, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import weatherLoadingAnimation from "../../assets/lottie/weather-loading.json";
 
-function Test() {
+function Weather() {
 	const weatherApi = import.meta.env.VITE_WEATHER_API;
 	const savedLocation = localStorage.getItem("savedLocation"); // either something or null
-	const giveLocation = "Get Geolocation";
+	const giveLocation = "Get Your Location";
 
 	const [locationInput, setLocationInput] = useState("");
 	const [weatherData, setWeatherData] = useState(null);
@@ -81,27 +81,67 @@ function Test() {
 
 	return (
 		<div>
+			<button onClick={() => setSendRequest((prev) => prev + 1)}>Get Weather Data</button>
 			<button onClick={(e) => getGeolocation(e)}>{giveLocation}</button>
-			<section>asdf</section>
-			<section>asdf</section>
-			<button onClick={() => setSendRequest((prev) => prev + 1)}>get data</button>
-			<input
-				type="text"
-				onChange={(e) => setLocationInput(e.target.value)}
-				value={locationInput}
-			/>
+			<section>
+				{/* <input
+					type="text"
+					placeholder="Provide your location"
+					value={locationInput}
+					onChange={(e) => setLocationInput(e.target.value)}
+					onKeyUp={(e) => {
+						if (e.key === "Enter") {
+							setLocation(locationInput);
+							setLocationProvided((prev) => !prev);
+						}
+					}}
+				/> */}
+				<input
+					type="text"
+					placeholder="Provide your location"
+					onChange={(e) => setLocationInput(e.target.value)}
+					value={locationInput}
+					onKeyUp={(e) => {
+						if (e.key === "Enter") {
+							setSendRequest((prev) => prev + 1);
+						}
+					}}
+				/>
+			</section>
 			{weatherData ? (
 				<section>
-					<aside>{weatherData.name}</aside>
-					<aside>{weatherData.temp_f}</aside>
+					<aside>Condition: {weatherData.condition.text}</aside>
+					<aside>
+						<img src={weatherData.condition.icon} />
+					</aside>
+					<aside>Cloud: {weatherData.cloud}</aside>
+					<aside>Temperature: {weatherData.temp_f}</aside>
+					<aside>Feels Like: {weatherData.feelslike_f}</aside>
+					<aside>UV: {weatherData.uv}</aside>
+					<aside>Humidity: {weatherData.humidity}</aside>
 				</section>
 			) : sendRequest === 0 ? (
 				<>request not yet sent</>
 			) : (
-				<>bad data?</>
+				<></>
+			)}
+
+			{error.code ? (
+				// Error section
+				<section>
+					{error.code === 1006 ? (
+						<section>Whoops, looks like the location you provided doesn't exist.</section>
+					) : error.code === 1003 ? (
+						<section>Whoops, looks like you forgot to provide your location.</section>
+					) : (
+						<></>
+					)}
+				</section>
+			) : (
+				<></>
 			)}
 		</div>
 	);
 }
 
-export default Test;
+export default Weather;

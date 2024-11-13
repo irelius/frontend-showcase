@@ -12,26 +12,22 @@ export default function Footer() {
 				<a target="_blank" href="https://samuelbae.netlify.app" className="pointer">
 					Samuel Bae
 				</a>
-				<a
-					target="_blank"
-					href="https://www.linkedin.com/in/sbkihongbae/"
-					className="pointer"
-				>
+				<a target="_blank" href="https://www.linkedin.com/in/sbkihongbae/" className="pointer">
 					<i className="fa-brands fa-linkedin fa-lg"></i>
 				</a>
 			</section>
 
-			<select className={`theme-container border pointer ${theme}-a1-border`}>
-				<option selected={theme === "summer"} onClick={() => changeTheme("summer")}>
+			<select defaultValue={theme} className={`theme-container border pointer ${theme}-a1-border`}>
+				<option value="summer" onClick={() => changeTheme("summer")}>
 					Summer
 				</option>
-				<option selected={theme === "spring"} onClick={() => changeTheme("spring")}>
+				<option value="spring" onClick={() => changeTheme("spring")}>
 					Spring
 				</option>
-				<option selected={theme === "fall"} onClick={() => changeTheme("fall")}>
+				<option value="fall" onClick={() => changeTheme("fall")}>
 					Fall
 				</option>
-				<option selected={theme === "winter"} onClick={() => changeTheme("winter")}>
+				<option value="winter" onClick={() => changeTheme("winter")}>
 					Winter
 				</option>
 			</select>

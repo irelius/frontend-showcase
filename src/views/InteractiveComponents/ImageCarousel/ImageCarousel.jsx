@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./ImageCarousel.css";
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 export default function ImageCarousel() {
 	const { theme } = useContext(ThemeContext);

@@ -2,7 +2,7 @@ import "./Weather.css";
 
 import { useContext, useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import weatherLoadingAnimation from "../../assets/lottie/weather-loading.json";
+import weatherLoadingAnimation from "../../../assets/lottie/weather-loading.json";
 
 function Weather() {
 	const weatherApi = import.meta.env.VITE_WEATHER_API;
@@ -13,6 +13,8 @@ function Weather() {
 	const [weatherData, setWeatherData] = useState(null);
 	const [sendRequest, setSendRequest] = useState(0);
 	const [error, setError] = useState({});
+
+	const [unit, setUnit] = useState("f");
 
 	// useEffect to set state variables with a saved location name if valid
 	useEffect(() => {
@@ -79,46 +81,68 @@ function Weather() {
 		}
 	}, [sendRequest]);
 
+	if (weatherData && unit) {
+		console.log("booba", weatherData);
+	}
+
 	return (
-		<div>
-			<button onClick={() => setSendRequest((prev) => prev + 1)}>Get Weather Data</button>
-			<button onClick={(e) => getGeolocation(e)}>{giveLocation}</button>
-			<section>
-				{/* <input
-					type="text"
-					placeholder="Provide your location"
-					value={locationInput}
-					onChange={(e) => setLocationInput(e.target.value)}
-					onKeyUp={(e) => {
-						if (e.key === "Enter") {
-							setLocation(locationInput);
-							setLocationProvided((prev) => !prev);
-						}
-					}}
-				/> */}
-				<input
-					type="text"
-					placeholder="Provide your location"
-					onChange={(e) => setLocationInput(e.target.value)}
-					value={locationInput}
-					onKeyUp={(e) => {
-						if (e.key === "Enter") {
-							setSendRequest((prev) => prev + 1);
-						}
-					}}
-				/>
+		<div className="weather-container">
+			<section className="weather-input-container">
+				<section className="weather-input-section">
+					<input
+						type="text"
+						className="weather-input"
+						placeholder="Provide your location"
+						onChange={(e) => setLocationInput(e.target.value)}
+						value={locationInput}
+						onKeyUp={(e) => {
+							if (e.key === "Enter") {
+								setSendRequest((prev) => prev + 1);
+							}
+						}}
+					/>
+					<i
+						onClick={() => setSendRequest((prev) => prev + 1)}
+						className="fa-solid fa-magnifying-glass pointer weather-search"
+					></i>
+				</section>
+				<section className="weather-location">
+					<i
+						onClick={(e) => getGeolocation(e)}
+						className="fa-solid fa-location-dot fa-lg pointer"
+					></i>
+				</section>
 			</section>
-			{weatherData ? (
-				<section>
-					<aside>Condition: {weatherData.condition.text}</aside>
-					<aside>
-						<img src={weatherData.condition.icon} />
+			{weatherData && unit ? (
+				<section className="weather-data">
+					<aside className="weather-data-left">
+						<img className="weather-data-icon" src={weatherData.condition.icon} />
+
+						<sb>{weatherData.condition.text}</sb>
 					</aside>
-					<aside>Cloud: {weatherData.cloud}</aside>
-					<aside>Temperature: {weatherData.temp_f}</aside>
-					<aside>Feels Like: {weatherData.feelslike_f}</aside>
-					<aside>UV: {weatherData.uv}</aside>
-					<aside>Humidity: {weatherData.humidity}</aside>
+
+					<aside className="weather-data-right">
+						<section>
+							<sb>Temperature:</sb> {weatherData[`temp_${unit}`]} °{unit.toUpperCase()}
+						</section>
+						<section>
+							<sb>Feels Like:</sb> {weatherData[`feelslike_${unit}`]} °{unit.toUpperCase()}
+						</section>
+						<section>
+							<sb>Humidity:</sb> {weatherData.humidity}%
+						</section>
+						<section>
+							<sb>Dewpoint:</sb> {weatherData[`dewpoint_${unit}`]} °{unit.toUpperCase()}
+						</section>
+						<section>
+							<sb>UV:</sb> {weatherData.uv} out of 11
+						</section>
+					</aside>
+
+					<section className="weather-unit-control">
+						<aside onClick={() => setUnit("f")} className={`pointer weather-unit-${unit === "f"}`}>°F</aside> |{" "}
+						<aside onClick={() => setUnit("c")} className={`pointer weather-unit-${unit === "c"}`}>°C</aside>
+					</section>
 				</section>
 			) : sendRequest === 0 ? (
 				<>request not yet sent</>
@@ -128,7 +152,7 @@ function Weather() {
 
 			{error.code ? (
 				// Error section
-				<section>
+				<section className="weather-data">
 					{error.code === 1006 ? (
 						<section>Whoops, looks like the location you provided doesn't exist.</section>
 					) : error.code === 1003 ? (

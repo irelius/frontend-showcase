@@ -1,40 +1,32 @@
-.df {
-	display: flex;
-}
+.asdf {
+	background-color: cyan;
 
-.c {
+	display: flex;
 	flex-direction: column;
-}
-
-.r {
-	flex-direction: row;
-}
-
-.gap {
-	gap: 15px;
-}
-
-.color-display {
-	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 
-	height: 50px;
-	width: 100px;
-	border: 2px solid black;
-}
-
-.official-test {
-	display: flex;
 	height: 100vh;
 	width: 100vw;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid black;
 }
 
-.official-test-2 {
-	height: 10vh;
-	width: 10vw;
-	/* object-fit: contain; */
+.test-box {
+	height: 10em;
+	width: 10em;
+
+	display: flex;
+	flex-direction: column;
+
+	border: 1px solid black;
+	justify-content: left;
+}
+.test-row {
+	display: flex;
+	flex-direction: row;
+
+	gap: 10px;
+}
+
+.test-box > section {
+	margin: auto;
 }

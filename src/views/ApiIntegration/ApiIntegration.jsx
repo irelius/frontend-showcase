@@ -3,13 +3,14 @@ import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LoadingAnimation } from "../../components";
 import SideBar from "../../components/SideBar/SideBar";
-import Weather from "../Weather/Weather";
+import Weather from "./Weather/Weather";
+import Header from "../../components/Header/Header";
 
 export default function ApiIntegration() {
 	const [load, setLoad] = useState(false);
 	const [loadTransition, setLoadTransition] = useState(false);
 	const options = ["Google Maps", "Weather", "Stocks"];
-	const [currDemo, setCurrDemo] = useState("image carousel");
+	const [currDemo, setCurrDemo] = useState("weather");
 	const [showSideBar, setShowSideBar] = useState(false);
 
 	const { theme } = useContext(ThemeContext);
@@ -40,10 +41,7 @@ export default function ApiIntegration() {
 				setShowSideBar={setShowSideBar}
 			/>
 
-			{/* Header section. Contains the button to set showSideBar to true so show side bar */}
-			<section className={`header ${theme}-theme`}>
-				<i className="fa-solid fa-bars fa-2xl pointer" onClick={() => setShowSideBar(true)}></i>
-			</section>
+			<Header showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
 
 			{/* Main section of interactive components */}
 			<div className="ai-container">

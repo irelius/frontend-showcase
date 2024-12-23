@@ -5,12 +5,13 @@ import { LoadingAnimation } from "../../components";
 import SideBar from "../../components/SideBar/SideBar";
 import Weather from "./Weather/Weather";
 import Header from "../../components/Header/Header";
+import MapsApi from "./MapsApi/MapsApi";
 
 export default function ApiIntegration() {
 	const [load, setLoad] = useState(false);
 	const [loadTransition, setLoadTransition] = useState(false);
-	const options = ["Google Maps", "Weather", "Stocks"];
-	const [currDemo, setCurrDemo] = useState("weather");
+	const options = ["Map", "Weather", "Stocks"];
+	const [currDemo, setCurrDemo] = useState("map");
 	const [showSideBar, setShowSideBar] = useState(false);
 
 	const { theme } = useContext(ThemeContext);
@@ -45,8 +46,8 @@ export default function ApiIntegration() {
 
 			{/* Main section of interactive components */}
 			<div className="ai-container">
-				{currDemo === "google maps" ? (
-					<>asdf maps</>
+				{currDemo === "map" ? (
+					<MapsApi />
 				) : currDemo === "weather" ? (
 					<Weather />
 				) : currDemo === "stocks" ? (

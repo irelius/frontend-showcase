@@ -116,3 +116,39 @@
 .weather-unit-false {
     opacity: 0.5;
 }
+
+
+/* ------------------------------------------ Weather Error ------------------------------------------ */
+.weather-error-container {
+    display: flex;
+	flex-direction: column;
+	width: 25em;
+    height: 15em;
+	gap: 1.5em;
+    margin-top: 1em;
+
+    border: 1px solid black;
+    border-radius: 25px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.weather-error-top {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 1em;
+
+}
+
+.weather-whoops {
+    font-size: var(--24);
+}
+
+.weather-error-bottom {
+    font-size: var(--16);
+}

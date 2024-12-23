@@ -6,7 +6,7 @@ import weatherLoadingAnimation from "../../../assets/lottie/weather-loading.json
 
 function Weather() {
 	const weatherApi = import.meta.env.VITE_WEATHER_API;
-	const savedLocation = localStorage.getItem("savedLocation"); // either something or null
+	const savedLocation = localStorage.getItem("zxzxczxc"); // either something or null
 	const giveLocation = "Get Your Location";
 
 	const [locationInput, setLocationInput] = useState("");
@@ -102,7 +102,7 @@ function Weather() {
 						}}
 					/>
 					<i
-						onClick={() => setSendRequest((prev) => prev + 1)}
+						onClick={() => getGeolocation()}
 						className="fa-solid fa-magnifying-glass pointer weather-search"
 					></i>
 				</section>
@@ -140,26 +140,33 @@ function Weather() {
 					</aside>
 
 					<section className="weather-unit-control">
-						<aside onClick={() => setUnit("f")} className={`pointer weather-unit-${unit === "f"}`}>°F</aside> |{" "}
-						<aside onClick={() => setUnit("c")} className={`pointer weather-unit-${unit === "c"}`}>°C</aside>
+						<aside onClick={() => setUnit("f")} className={`pointer weather-unit-${unit === "f"}`}>
+							°F
+						</aside>{" "}
+						|{" "}
+						<aside onClick={() => setUnit("c")} className={`pointer weather-unit-${unit === "c"}`}>
+							°C
+						</aside>
 					</section>
 				</section>
 			) : sendRequest === 0 ? (
-				<>request not yet sent</>
+				<>Collecting weather data...</>
 			) : (
 				<></>
 			)}
 
 			{error.code ? (
 				// Error section
-				<section className="weather-data">
-					{error.code === 1006 ? (
-						<section>Whoops, looks like the location you provided doesn't exist.</section>
-					) : error.code === 1003 ? (
-						<section>Whoops, looks like you forgot to provide your location.</section>
-					) : (
-						<></>
-					)}
+				<section className="weather-error-container">
+					<section className="weather-error-top">
+						<i className="fa-solid fa-circle-exclamation fa-2xl"></i>
+						<sb className="weather-whoops">Whoops</sb>
+					</section>
+					<section className="weather-error-bottom">
+						{error.code === 1006
+							? `Looks like the location you provided doesn't exist.`
+							: `Looks like you forgot to provide your location.`}
+					</section>
 				</section>
 			) : (
 				<></>

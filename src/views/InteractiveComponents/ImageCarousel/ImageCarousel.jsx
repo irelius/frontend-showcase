@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./ImageCarousel.css";
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 export default function ImageCarousel() {
 	const { theme } = useContext(ThemeContext);
@@ -75,7 +75,7 @@ export default function ImageCarousel() {
 							<img
 								onMouseOver={() => setHover(true)}
 								onMouseOut={() => setHover(false)}
-                                onClick={() => setCurrentImage(i)}
+								onClick={() => setCurrentImage(i)}
 								key={i}
 								className={`carousel-image image-focus-${
 									i === currentImage
@@ -100,7 +100,7 @@ export default function ImageCarousel() {
 
 			<section
 				className="carousel-quick-container"
-				style={{ left: `calc(50% - 0.1em - ${currentImage}em)` }}
+				style={{ left: `calc(50% - ${currentImage}em)` }}
 			>
 				{images.map((el, i) => {
 					return (

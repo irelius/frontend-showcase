@@ -1,0 +1,154 @@
+/* ------------------------------------- Weather Main Container------------------------------------- */
+.weather-container {
+	width: 25em;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	gap: 0.5em;
+
+    /* background-color: cyan; */
+}
+
+/* ----------------------------------------- Weather Input ----------------------------------------- */
+.weather-input-container {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	gap: 0.5em;
+}
+
+.weather-input-section {
+    border: 2px solid black;
+
+	padding: 0.5em;
+	border-radius: 25px;
+	padding-left: 1em;
+}
+
+.weather-input {
+	border: none;
+}
+
+.weather-input::placeholder {
+	opacity: 0.5;
+}
+
+.weather-search {
+	margin-right: 0.4em;
+}
+
+.weather-location {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 2em;
+	width: 2em;
+	border: 1px solid transparent;
+	border-radius: 90%;
+	transition: border 0.25s ease-out;
+}
+
+.weather-location:hover {
+	border: 1px solid black;
+	cursor: pointer;
+	transition: border 0.25s ease-in;
+}
+
+/* ------------------------------------------ Weather Data ------------------------------------------ */
+.weather-data {
+	display: flex;
+	flex-direction: row;
+	width: 25em;
+    height: 15em;
+	gap: 1em;
+    margin-top: 1em;
+
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.weather-data-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+
+	width: 50%;
+
+    gap: 0.5em;
+}
+
+.weather-data-icon {
+    width: 100px;
+}
+
+.weather-data-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75em;
+	width: 50%;
+}
+
+
+
+/* -------------------------------------- Weather Unit Control -------------------------------------- */
+.weather-unit-control {
+    position: absolute;
+
+    display: flex;
+    gap: 0.3em;
+    margin: 1.5em;
+
+    font-size: var(--16)
+}
+
+
+.weather-unit-true {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
+.weather-unit-false {
+    opacity: 0.5;
+}
+
+
+/* ------------------------------------------ Weather Error ------------------------------------------ */
+.weather-error-container {
+    display: flex;
+	flex-direction: column;
+	width: 25em;
+    height: 15em;
+	gap: 1.5em;
+    margin-top: 1em;
+
+    border: 1px solid black;
+    border-radius: 25px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.weather-error-top {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 1em;
+
+}
+
+.weather-whoops {
+    font-size: var(--24);
+}
+
+.weather-error-bottom {
+    font-size: var(--16);
+}

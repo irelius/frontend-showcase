@@ -28,12 +28,16 @@
 
 html,
 body {
-	scrollbar-gutter: stable;
+	// scrollbar-gutter: stable;
 }
 
 body {
 	font-family: Montserrat;
 	font-size: var(--20);
+}
+
+input {
+    border: 1px solid black;
 }
 
 button {
@@ -44,6 +48,10 @@ button {
 	border-radius: 3em;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .button-shadow {
 	transition: filter 0.25s ease;
 }
@@ -52,6 +60,10 @@ button {
 	cursor: pointer;
 	filter: drop-shadow(0px 7px 1px rgba(0, 0, 0, 0.3));
 	transition: filter 0.25s ease;
+}
+
+sb {
+	font-weight: var(--semi-bold);
 }
 
 // ------------------------------ Loading Transition ------------------------------
@@ -200,6 +212,26 @@ $spacing-vals: (
 }
 
 // -------------------------------------------------------------------------------
+
+
+// -------------------------------- Header ---------------------------------------
+.header {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	right: 0;
+
+	height: 4em;
+
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+
+    z-index: 10;
+}
+// -------------------------------------------------------------------------------
+
 
 // -------------------------------- Modal ----------------------------------------
 .modal-background {

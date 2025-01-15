@@ -4,7 +4,9 @@ export default function MapsApi() {
 	return (
 		<div>
 			<section>
-				<div id="map">asdf</div>
+				<div id="map">
+                    Google Maps API WIP
+                </div>
 			</section>
 		</div>
 	);

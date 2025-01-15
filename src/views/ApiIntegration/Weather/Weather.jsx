@@ -81,10 +81,6 @@ function Weather() {
 		}
 	}, [sendRequest]);
 
-	if (weatherData && unit) {
-		console.log("booba", weatherData);
-	}
-
 	return (
 		<div className="weather-container">
 			<section className="weather-input-container">

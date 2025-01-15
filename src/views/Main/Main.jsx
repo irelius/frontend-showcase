@@ -19,7 +19,7 @@ export default function Main() {
 				onClick={() => navigate("/interactive-components")}
 				className={`main-page-columns pointer ${theme}-theme wtf`}
 			>
-                        Interactive Components
+				Interactive Components
 			</section>
 			<section
 				onClick={() => navigate("/content-display")}

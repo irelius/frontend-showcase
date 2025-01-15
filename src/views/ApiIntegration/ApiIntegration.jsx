@@ -11,7 +11,7 @@ export default function ApiIntegration() {
 	const [load, setLoad] = useState(false);
 	const [loadTransition, setLoadTransition] = useState(false);
 	const options = ["Map", "Weather", "Stocks"];
-	const [currDemo, setCurrDemo] = useState("map");
+	const [currDemo, setCurrDemo] = useState("weather");
 	const [showSideBar, setShowSideBar] = useState(false);
 
 	const { theme } = useContext(ThemeContext);
@@ -51,7 +51,7 @@ export default function ApiIntegration() {
 				) : currDemo === "weather" ? (
 					<Weather />
 				) : currDemo === "stocks" ? (
-					<>asdf</>
+					<>Stocks API WIP.</>
 				) : (
 					<div></div>
 				)}

@@ -1,8 +1,9 @@
-# React + Vite
+Hello, this is my Frontend Showcase, a project with the purpose of implementing and demonstrating a variety of frontend development practices and components, all done with React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is still a work in progress, but it is planned to have features such as:
+- Advanced CSS for styling
+- Media queries
+- Third party APIs (e.g. weather, stock, maps, payment gateways)
+- Real-time communication with Socket.io
+    - As well as other websockets
+- Reusable and modular components for proper DRY practice
